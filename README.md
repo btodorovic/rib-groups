@@ -96,6 +96,8 @@ root@r1:~ # ps ax | grep rpd
 89999  -  S        0:00.41 /usr/sbin/rpd -N -JLLS-3
 </pre>
 
+There can be up to 15 Logical Systems defined within the same physical router.
+
 Each LS may have its own set of routing instances, each routing instance being a collection of RIBs.
 
 Routing information can be exchnaged among routing instances using the RIB Group mehanism, discussed later.
@@ -197,3 +199,4 @@ routing-instances {
 }
 </pre>
 
+Last, but not the least - RIB groups can also be created within Logical Systems. Same principles apply.
