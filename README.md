@@ -120,6 +120,97 @@ Simple exercise showing the power of rib-groups and their replications:
     - **RG-VRxxx-TO-INET0** - copies **VRxxx.inet6.0** prefixes into **inet6.0** (IPv6)
     - All use import-policy **PS-VR100-TO-INET0** copying only direct and BGP routes
 
+Simplified, the syntax looks like this:
+<pre>
+routing-options {
+   rib-groups {
+        RG-INET0-TO-VRs {
+            import-rib [ inet.0 VR10.inet.0 VR11.inet.0 ... VR199.inet.0 ];
+            import-policy PS-INET0-TO-VRs;
+        }
+        RG-VR10-TO-INET0 {
+            import-rib [ VR10.inet.0 inet.0 ];
+            import-policy PS-VR10-TO-INET0;
+        }
+        RG-VR10-TO-INET6 {
+            import-rib [ VR10.inet6.0 inet6.0 ];
+            import-policy PS-VR10-TO-INET0;
+        }
+        ...
+        RG-VR199-TO-INET0 {
+            import-rib [ VR199.inet.0 inet.0 ];
+            import-policy PS-VR199-TO-INET0;
+        }
+        RG-VR199-TO-INET6 {
+            import-rib [ VR199.inet6.0 inet6.0 ];
+            import-policy PS-VR199-TO-INET0;
+        }
+    }
+}
+
+policy-options {
+    policy-statement PS-INET0-TO-VRs {
+        term VR10-INET {
+            from {
+                family inet;
+                protocol direct;
+                route-filter 100.100.10.1/32 exact;
+            }
+            to rib VR10.inet.0;
+            then accept;
+        }
+        term VR10-INET6 {
+            from {
+                family inet6;
+                route-filter 2001:1100:10::1/128 exact;
+            }
+            to rib VR10.inet6.0;
+            then accept;
+        }
+        term VR11-INET {
+            from {
+                family inet;
+                protocol direct;
+                route-filter 100.100.11.1/32 exact;
+            }
+            to rib VR11.inet.0;
+            then accept;
+        }
+        term VR11-INET6 {
+            from {
+                family inet6;
+                route-filter 2001:1100:11::1/128 exact;
+            }
+            to rib VR11.inet6.0;
+            then accept;
+        }
+        ... (etc) ...
+    }
+    policy-statement PS-VR10-TO-INET0 {
+        term BGP {
+            from {
+                protocol bgp;
+                as-path AS1010;
+            }
+            then accept;
+        }
+        term DIRECT {
+            from {
+                protocol direct;
+                interface lo0.10;
+            }
+            then accept;
+        }
+        then reject;
+    }
+    ... (etc) ...
+}
+</pre>
+
+See the full router configurations for more details:
+* [r1 configuration](r1.full.conf)
+* [r2 configuration](r2.full.conf)
+
 Once the RIB Groups are defined they do nothing. They serve simply as "templates" signaling the router our intention
 to copy prefixes from one RIB into the other. However, in order for them to take this action, they must be applied
 within the proper routing protocol configuration context.
@@ -198,6 +289,10 @@ routing-instances {
     }
 }
 </pre>
+
+See the full router configurations for more details:
+* [r1 configuration](r1.full.conf)
+* [r2 configuration](r2.full.conf)
 
 Last, but not the least - RIB groups can also be created within Logical Systems. Same principles apply.
 
