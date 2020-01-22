@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #
-# Script to generate "PE" (r1) rib-group/routing-instance configuration
+# Script to generate "PE" (r1) rib-groups/routing-instances configuration
 #
 
 from string import Template
