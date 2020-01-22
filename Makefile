@@ -1,3 +1,5 @@
+all:	git
+
 git:
 	git add .
 	git commit -am "`date -u +%Y%m%d-%H:%M:%S`" --no-edit
