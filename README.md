@@ -19,31 +19,86 @@
 * [r2 configuration](r2.full.conf)
 * [Sample CLI outputs](sample-outputs.txt)
 
-
-## JUNOS RIBs
+## Theory - RIBs, Routing Instances, Logical Systems
 
 Since Day One the routing tables on the Juniper Networks routers and switches have been designed in a "compartmental"
 fashion, intended to store routing information belonging to different routing contexts. This design came hand in hand
 with the technical requirement to implement MPLS L3 VPNs and similar applications back in 1998 when MPLS technology
 was born. Therefore, Juniper Networks devices can maintain a myriad of independent routing tables, both on the
 Routing Engine (RE) and on the Packet Forwarding Engine (PFE). We refer the former as Routing Information Base (RIB),
-while the latter is somtimes referred to as Forwarding Information Base (FIB).
+while the latter is somtimes referred to as Forwarding Information Base (FIB)
 
-When a "virgin" router is booted it comes only with one single RIB - the default **inet.0**, used to carry IPv4
-unicast prefixes. When MPLS services are activated on the box, the router gets two additional RIBs - **mpls.0**
-used to store MPLS label forwarding information and **inet.3** used as a helper RIB to store MPLS LSP endpoints,
-used by various MPLS services to retrieve the next-hops for their operation. Finally, if IPv6 is used, **inet6.0**
-RIB appears in there as well. If IS-IS is used as IGP **iso.0** RIB will appear to carry CLNS routing information.
-If MPLS IPv4 VPNs are used **bgp.l3vpn.0** RIB will be there to store BGP-learnt VPNv4 routes.
-If MPLS IPv6 VPNs are used **bgp.l3vpn-inet6.0** RIB will be there to store BGP-learnt VPNv6 routes.
+When a "virgin" router is booted it comes only with one single RIB created on the RE - the default **inet.0**,
+used to carry IPv4 unicast prefixes. In the PFE the router has a pre-ccreated "FIB" **default.inet**. When
+multicast is used on the router, **inet.1** RIB will be created, to store multicst (S,G) pairs, as well as **inet.2**
+to store prefixes used by multicast RPF checks. When MPLS services are activated on the box, the router gets two
+additional RIBs - **mpls.0** used to store MPLS label forwarding information and **inet.3** used as a helper RIB to
+store MPLS LSP endpoints, used by various MPLS services to retrieve the next-hops for their operation. Finally,
+if IPv6 is used, **inet6.0** RIB appears in there as well. If IS-IS is used as IGP **iso.0** RIB will appear to
+carry CLNS routing information. If MPLS IPv4 VPNs are used **bgp.l3vpn.0** RIB will be there to store BGP-learnt
+VPNv4 routes. If MPLS IPv6 VPNs are used **bgp.l3vpn-inet6.0** RIB will be there to store BGP-learnt VPNv6 routes.
+A part of this is shown in the picture below:
+<pre>
+                                                      
+        MASTER/DEFAULT ROUTING INSTANCE            NON-DEFAULT ROUTING INSTANCES (VRF, VR etc.)
+        ===============================            ============================================
+                         _____________                                                               
+                        /             \                                                               
+                       (  bgp.l3vpn.0  )          +--------------------+  +--------------------+                                                      
+                        \_____________/           !    INSTANCE "A"    !  !    INSTANCE "B"    !                              
+                                                  !                    !  !                    !
+                 ___________      ___________     !  +------------+    !  !  +------------+    !                                       
+                /           \    /           \    !  |  A.inet6.0 |    !  !  |  B.inet6.0 |    !                                    
+               (   inet.3    )  (  inet6.3    )   !  +------------+    !  !  +------------+    !                                      
+                \___________/    \___________/    !                    !  !                    !                                     
+                                                  !  +------------+    !  !  +------------+    !   
+ +----------+   +------------+   +------------+   !  |  A.inet.0  |    !  !  |  B.inet.0  |    !                                      
+ |  mpls.0  |   |   inet.0   |   |  inet6.0   |   !  +------------+    !  !  +------------+    !                                    
+ +----------+   +------------+   +------------+   +--------------------+  +--------------------+ CONTROL                                                       
+                                                                                                 PLANE
+============================================================================================================
+ +----------+ +---------------+ +---------------+   +-------------+          +-------------+     FORWARDING
+ |  mpls.0  | | default.inet  | | default.inet6 |   |   A.inet6   |          |   B.inet6   |     PLANE
+ +----------+ +---------------+ +---------------+   +-------------+          +-------------+
+                                                    +-------------+          +-------------+
+                                                    |   A.inet    |          |   B.inet    |
+                                                    +-------------+          +-------------+
+</pre>
 
-Aside of RIBs, to implement various VPN services, Junos OS uses the concept of Routing Instances (RI).
+Aside of RIBs, to implement various VPN services, Junos OS uses the concept of [Routing Instances (RI)](https://www.juniper.net/documentation/en_US/junos/topics/concept/routing-instances-overview.html).
+A Routing Instance is simply a collection of RIBs storing routing information relevant for them.
 The defualt Junos RIB **inet.0**, as well as **inet6.0**, **inet.3** etc. belong to the Master (Default) RI.
-A Routing Instance is, thus, a collection of RIBs storing routing information relevant for them.
 When a VPN needs to be defined, Junos OS creates a new Routing Instance with a defined name (e.g. VPN).
 The VPN routing instance is simply a collection of RIBs - **VPN.inet.0**, **VPN.inet6.0** etc.
 
-Routing information can be exchnaged among routing instances using the RIB Group mehanism, shown here.
+As of Junos OS Release 8, a concept of [Logical Systems](https://www.juniper.net/documentation/en_US/junos/topics/topic-map/security-logical-systems-for-routers-and-switches.html)
+has been introduced. Logical systems are used to partition a single physical router into a number of logical partitions.
+Although logical systems are similar to Virtual Routers, they are implemented in a slightly different way. Unlike Virtual
+Routers, VRFs and other types of routing instances, which operate within the common Routing Protocol Daemon (rpd) process,
+creation of a Logical System starts a separate instance of rpd - e.g.:
+
+<pre>
+logical-systems {
+   LS-1;
+   LS-2;
+   LS-3;
+}
+
+root@r1> start shell
+root@r1:~ # ps ax | grep rpd
+ 6520  -  S        7:24.04 /usr/sbin/rpd -N
+89997  -  S        0:00.42 /usr/sbin/rpd -N -JLLS-1
+89998  -  S        0:00.42 /usr/sbin/rpd -N -JLLS-2
+89999  -  S        0:00.41 /usr/sbin/rpd -N -JLLS-3
+</pre>
+
+Each LS may have its own set of routing instances, each routing instance being a collection of RIBs.
+
+Routing information can be exchnaged among routing instances using the RIB Group mehanism, discussed later.
+If Logical Systems are used, RIBs can exchange routing information among themselves only if they belong to the
+same Logical System. RIBs belonging to different Logical Systems cannot exchange routing information directly
+using RIB Groups. They can only exchange routing information by connecting two Logical Systems together
+(either via a physical "hairpin" or a logical tunnel (LT) interface).
 
 ## RIB Group Definitions
 
