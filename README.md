@@ -13,6 +13,13 @@
 +----+                       +----+
 </pre>
 
+### Router Configurations and Sample Outputs
+
+* (r1.full.conf)[r1]
+* (r2.full.conf)[r2]
+* (sample-outputs.txt)[sample outputs]
+
+
 ## JUNOS RIBs
 
 Since Day One the routing tables on the Juniper Networks routers and switches have been designed in a "compartmental"
