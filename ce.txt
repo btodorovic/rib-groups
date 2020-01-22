@@ -1,0 +1,2850 @@
+
+set interfaces ge-0/0/3.10 vlan-id 10 family inet address 172.20.3.1/31
+set interfaces ge-0/0/3.10 vlan-id 10 family inet6 address 2001:200:20:3::1/127
+set interfaces lo0.10 family inet address 100.64.10.1/32
+set interfaces lo0.10 family inet6 address 2001:164:10::1/128
+set routing-instances CE-10 instance-type virtual-router
+set routing-instances CE-10 interface lo0.10
+set routing-instances CE-10 interface ge-0/0/3.10
+set routing-instances CE-10 routing-options autonomous-system 1010 independent-domain
+set routing-instances CE-10 routing-options static route 100.64.10.0/24 discard
+set routing-instances CE-10 routing-options rib CE-10.inet6.0 static route 2001:164:10::/48 discard
+set routing-instances CE-10 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.0 family inet
+set routing-instances CE-10 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3:: family inet6
+set routing-instances CE-10 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.11 vlan-id 11 family inet address 172.20.3.3/31
+set interfaces ge-0/0/3.11 vlan-id 11 family inet6 address 2001:200:20:3::3/127
+set interfaces lo0.11 family inet address 100.64.11.1/32
+set interfaces lo0.11 family inet6 address 2001:164:11::1/128
+set routing-instances CE-11 instance-type virtual-router
+set routing-instances CE-11 interface lo0.11
+set routing-instances CE-11 interface ge-0/0/3.11
+set routing-instances CE-11 routing-options autonomous-system 1011 independent-domain
+set routing-instances CE-11 routing-options static route 100.64.11.0/24 discard
+set routing-instances CE-11 routing-options rib CE-11.inet6.0 static route 2001:164:11::/48 discard
+set routing-instances CE-11 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.2 family inet
+set routing-instances CE-11 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::2 family inet6
+set routing-instances CE-11 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.12 vlan-id 12 family inet address 172.20.3.5/31
+set interfaces ge-0/0/3.12 vlan-id 12 family inet6 address 2001:200:20:3::5/127
+set interfaces lo0.12 family inet address 100.64.12.1/32
+set interfaces lo0.12 family inet6 address 2001:164:12::1/128
+set routing-instances CE-12 instance-type virtual-router
+set routing-instances CE-12 interface lo0.12
+set routing-instances CE-12 interface ge-0/0/3.12
+set routing-instances CE-12 routing-options autonomous-system 1012 independent-domain
+set routing-instances CE-12 routing-options static route 100.64.12.0/24 discard
+set routing-instances CE-12 routing-options rib CE-12.inet6.0 static route 2001:164:12::/48 discard
+set routing-instances CE-12 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.4 family inet
+set routing-instances CE-12 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::4 family inet6
+set routing-instances CE-12 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.13 vlan-id 13 family inet address 172.20.3.7/31
+set interfaces ge-0/0/3.13 vlan-id 13 family inet6 address 2001:200:20:3::7/127
+set interfaces lo0.13 family inet address 100.64.13.1/32
+set interfaces lo0.13 family inet6 address 2001:164:13::1/128
+set routing-instances CE-13 instance-type virtual-router
+set routing-instances CE-13 interface lo0.13
+set routing-instances CE-13 interface ge-0/0/3.13
+set routing-instances CE-13 routing-options autonomous-system 1013 independent-domain
+set routing-instances CE-13 routing-options static route 100.64.13.0/24 discard
+set routing-instances CE-13 routing-options rib CE-13.inet6.0 static route 2001:164:13::/48 discard
+set routing-instances CE-13 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.6 family inet
+set routing-instances CE-13 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::6 family inet6
+set routing-instances CE-13 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.14 vlan-id 14 family inet address 172.20.3.9/31
+set interfaces ge-0/0/3.14 vlan-id 14 family inet6 address 2001:200:20:3::9/127
+set interfaces lo0.14 family inet address 100.64.14.1/32
+set interfaces lo0.14 family inet6 address 2001:164:14::1/128
+set routing-instances CE-14 instance-type virtual-router
+set routing-instances CE-14 interface lo0.14
+set routing-instances CE-14 interface ge-0/0/3.14
+set routing-instances CE-14 routing-options autonomous-system 1014 independent-domain
+set routing-instances CE-14 routing-options static route 100.64.14.0/24 discard
+set routing-instances CE-14 routing-options rib CE-14.inet6.0 static route 2001:164:14::/48 discard
+set routing-instances CE-14 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.8 family inet
+set routing-instances CE-14 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::8 family inet6
+set routing-instances CE-14 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.15 vlan-id 15 family inet address 172.20.3.11/31
+set interfaces ge-0/0/3.15 vlan-id 15 family inet6 address 2001:200:20:3::b/127
+set interfaces lo0.15 family inet address 100.64.15.1/32
+set interfaces lo0.15 family inet6 address 2001:164:15::1/128
+set routing-instances CE-15 instance-type virtual-router
+set routing-instances CE-15 interface lo0.15
+set routing-instances CE-15 interface ge-0/0/3.15
+set routing-instances CE-15 routing-options autonomous-system 1015 independent-domain
+set routing-instances CE-15 routing-options static route 100.64.15.0/24 discard
+set routing-instances CE-15 routing-options rib CE-15.inet6.0 static route 2001:164:15::/48 discard
+set routing-instances CE-15 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.10 family inet
+set routing-instances CE-15 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::a family inet6
+set routing-instances CE-15 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.16 vlan-id 16 family inet address 172.20.3.13/31
+set interfaces ge-0/0/3.16 vlan-id 16 family inet6 address 2001:200:20:3::d/127
+set interfaces lo0.16 family inet address 100.64.16.1/32
+set interfaces lo0.16 family inet6 address 2001:164:16::1/128
+set routing-instances CE-16 instance-type virtual-router
+set routing-instances CE-16 interface lo0.16
+set routing-instances CE-16 interface ge-0/0/3.16
+set routing-instances CE-16 routing-options autonomous-system 1016 independent-domain
+set routing-instances CE-16 routing-options static route 100.64.16.0/24 discard
+set routing-instances CE-16 routing-options rib CE-16.inet6.0 static route 2001:164:16::/48 discard
+set routing-instances CE-16 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.12 family inet
+set routing-instances CE-16 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::c family inet6
+set routing-instances CE-16 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.17 vlan-id 17 family inet address 172.20.3.15/31
+set interfaces ge-0/0/3.17 vlan-id 17 family inet6 address 2001:200:20:3::f/127
+set interfaces lo0.17 family inet address 100.64.17.1/32
+set interfaces lo0.17 family inet6 address 2001:164:17::1/128
+set routing-instances CE-17 instance-type virtual-router
+set routing-instances CE-17 interface lo0.17
+set routing-instances CE-17 interface ge-0/0/3.17
+set routing-instances CE-17 routing-options autonomous-system 1017 independent-domain
+set routing-instances CE-17 routing-options static route 100.64.17.0/24 discard
+set routing-instances CE-17 routing-options rib CE-17.inet6.0 static route 2001:164:17::/48 discard
+set routing-instances CE-17 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.14 family inet
+set routing-instances CE-17 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::e family inet6
+set routing-instances CE-17 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.18 vlan-id 18 family inet address 172.20.3.17/31
+set interfaces ge-0/0/3.18 vlan-id 18 family inet6 address 2001:200:20:3::11/127
+set interfaces lo0.18 family inet address 100.64.18.1/32
+set interfaces lo0.18 family inet6 address 2001:164:18::1/128
+set routing-instances CE-18 instance-type virtual-router
+set routing-instances CE-18 interface lo0.18
+set routing-instances CE-18 interface ge-0/0/3.18
+set routing-instances CE-18 routing-options autonomous-system 1018 independent-domain
+set routing-instances CE-18 routing-options static route 100.64.18.0/24 discard
+set routing-instances CE-18 routing-options rib CE-18.inet6.0 static route 2001:164:18::/48 discard
+set routing-instances CE-18 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.16 family inet
+set routing-instances CE-18 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::10 family inet6
+set routing-instances CE-18 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.19 vlan-id 19 family inet address 172.20.3.19/31
+set interfaces ge-0/0/3.19 vlan-id 19 family inet6 address 2001:200:20:3::13/127
+set interfaces lo0.19 family inet address 100.64.19.1/32
+set interfaces lo0.19 family inet6 address 2001:164:19::1/128
+set routing-instances CE-19 instance-type virtual-router
+set routing-instances CE-19 interface lo0.19
+set routing-instances CE-19 interface ge-0/0/3.19
+set routing-instances CE-19 routing-options autonomous-system 1019 independent-domain
+set routing-instances CE-19 routing-options static route 100.64.19.0/24 discard
+set routing-instances CE-19 routing-options rib CE-19.inet6.0 static route 2001:164:19::/48 discard
+set routing-instances CE-19 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.18 family inet
+set routing-instances CE-19 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::12 family inet6
+set routing-instances CE-19 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.20 vlan-id 20 family inet address 172.20.3.21/31
+set interfaces ge-0/0/3.20 vlan-id 20 family inet6 address 2001:200:20:3::15/127
+set interfaces lo0.20 family inet address 100.64.20.1/32
+set interfaces lo0.20 family inet6 address 2001:164:20::1/128
+set routing-instances CE-20 instance-type virtual-router
+set routing-instances CE-20 interface lo0.20
+set routing-instances CE-20 interface ge-0/0/3.20
+set routing-instances CE-20 routing-options autonomous-system 1020 independent-domain
+set routing-instances CE-20 routing-options static route 100.64.20.0/24 discard
+set routing-instances CE-20 routing-options rib CE-20.inet6.0 static route 2001:164:20::/48 discard
+set routing-instances CE-20 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.20 family inet
+set routing-instances CE-20 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::14 family inet6
+set routing-instances CE-20 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.21 vlan-id 21 family inet address 172.20.3.23/31
+set interfaces ge-0/0/3.21 vlan-id 21 family inet6 address 2001:200:20:3::17/127
+set interfaces lo0.21 family inet address 100.64.21.1/32
+set interfaces lo0.21 family inet6 address 2001:164:21::1/128
+set routing-instances CE-21 instance-type virtual-router
+set routing-instances CE-21 interface lo0.21
+set routing-instances CE-21 interface ge-0/0/3.21
+set routing-instances CE-21 routing-options autonomous-system 1021 independent-domain
+set routing-instances CE-21 routing-options static route 100.64.21.0/24 discard
+set routing-instances CE-21 routing-options rib CE-21.inet6.0 static route 2001:164:21::/48 discard
+set routing-instances CE-21 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.22 family inet
+set routing-instances CE-21 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::16 family inet6
+set routing-instances CE-21 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.22 vlan-id 22 family inet address 172.20.3.25/31
+set interfaces ge-0/0/3.22 vlan-id 22 family inet6 address 2001:200:20:3::19/127
+set interfaces lo0.22 family inet address 100.64.22.1/32
+set interfaces lo0.22 family inet6 address 2001:164:22::1/128
+set routing-instances CE-22 instance-type virtual-router
+set routing-instances CE-22 interface lo0.22
+set routing-instances CE-22 interface ge-0/0/3.22
+set routing-instances CE-22 routing-options autonomous-system 1022 independent-domain
+set routing-instances CE-22 routing-options static route 100.64.22.0/24 discard
+set routing-instances CE-22 routing-options rib CE-22.inet6.0 static route 2001:164:22::/48 discard
+set routing-instances CE-22 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.24 family inet
+set routing-instances CE-22 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::18 family inet6
+set routing-instances CE-22 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.23 vlan-id 23 family inet address 172.20.3.27/31
+set interfaces ge-0/0/3.23 vlan-id 23 family inet6 address 2001:200:20:3::1b/127
+set interfaces lo0.23 family inet address 100.64.23.1/32
+set interfaces lo0.23 family inet6 address 2001:164:23::1/128
+set routing-instances CE-23 instance-type virtual-router
+set routing-instances CE-23 interface lo0.23
+set routing-instances CE-23 interface ge-0/0/3.23
+set routing-instances CE-23 routing-options autonomous-system 1023 independent-domain
+set routing-instances CE-23 routing-options static route 100.64.23.0/24 discard
+set routing-instances CE-23 routing-options rib CE-23.inet6.0 static route 2001:164:23::/48 discard
+set routing-instances CE-23 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.26 family inet
+set routing-instances CE-23 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::1a family inet6
+set routing-instances CE-23 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.24 vlan-id 24 family inet address 172.20.3.29/31
+set interfaces ge-0/0/3.24 vlan-id 24 family inet6 address 2001:200:20:3::1d/127
+set interfaces lo0.24 family inet address 100.64.24.1/32
+set interfaces lo0.24 family inet6 address 2001:164:24::1/128
+set routing-instances CE-24 instance-type virtual-router
+set routing-instances CE-24 interface lo0.24
+set routing-instances CE-24 interface ge-0/0/3.24
+set routing-instances CE-24 routing-options autonomous-system 1024 independent-domain
+set routing-instances CE-24 routing-options static route 100.64.24.0/24 discard
+set routing-instances CE-24 routing-options rib CE-24.inet6.0 static route 2001:164:24::/48 discard
+set routing-instances CE-24 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.28 family inet
+set routing-instances CE-24 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::1c family inet6
+set routing-instances CE-24 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.25 vlan-id 25 family inet address 172.20.3.31/31
+set interfaces ge-0/0/3.25 vlan-id 25 family inet6 address 2001:200:20:3::1f/127
+set interfaces lo0.25 family inet address 100.64.25.1/32
+set interfaces lo0.25 family inet6 address 2001:164:25::1/128
+set routing-instances CE-25 instance-type virtual-router
+set routing-instances CE-25 interface lo0.25
+set routing-instances CE-25 interface ge-0/0/3.25
+set routing-instances CE-25 routing-options autonomous-system 1025 independent-domain
+set routing-instances CE-25 routing-options static route 100.64.25.0/24 discard
+set routing-instances CE-25 routing-options rib CE-25.inet6.0 static route 2001:164:25::/48 discard
+set routing-instances CE-25 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.30 family inet
+set routing-instances CE-25 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::1e family inet6
+set routing-instances CE-25 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.26 vlan-id 26 family inet address 172.20.3.33/31
+set interfaces ge-0/0/3.26 vlan-id 26 family inet6 address 2001:200:20:3::21/127
+set interfaces lo0.26 family inet address 100.64.26.1/32
+set interfaces lo0.26 family inet6 address 2001:164:26::1/128
+set routing-instances CE-26 instance-type virtual-router
+set routing-instances CE-26 interface lo0.26
+set routing-instances CE-26 interface ge-0/0/3.26
+set routing-instances CE-26 routing-options autonomous-system 1026 independent-domain
+set routing-instances CE-26 routing-options static route 100.64.26.0/24 discard
+set routing-instances CE-26 routing-options rib CE-26.inet6.0 static route 2001:164:26::/48 discard
+set routing-instances CE-26 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.32 family inet
+set routing-instances CE-26 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::20 family inet6
+set routing-instances CE-26 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.27 vlan-id 27 family inet address 172.20.3.35/31
+set interfaces ge-0/0/3.27 vlan-id 27 family inet6 address 2001:200:20:3::23/127
+set interfaces lo0.27 family inet address 100.64.27.1/32
+set interfaces lo0.27 family inet6 address 2001:164:27::1/128
+set routing-instances CE-27 instance-type virtual-router
+set routing-instances CE-27 interface lo0.27
+set routing-instances CE-27 interface ge-0/0/3.27
+set routing-instances CE-27 routing-options autonomous-system 1027 independent-domain
+set routing-instances CE-27 routing-options static route 100.64.27.0/24 discard
+set routing-instances CE-27 routing-options rib CE-27.inet6.0 static route 2001:164:27::/48 discard
+set routing-instances CE-27 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.34 family inet
+set routing-instances CE-27 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::22 family inet6
+set routing-instances CE-27 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.28 vlan-id 28 family inet address 172.20.3.37/31
+set interfaces ge-0/0/3.28 vlan-id 28 family inet6 address 2001:200:20:3::25/127
+set interfaces lo0.28 family inet address 100.64.28.1/32
+set interfaces lo0.28 family inet6 address 2001:164:28::1/128
+set routing-instances CE-28 instance-type virtual-router
+set routing-instances CE-28 interface lo0.28
+set routing-instances CE-28 interface ge-0/0/3.28
+set routing-instances CE-28 routing-options autonomous-system 1028 independent-domain
+set routing-instances CE-28 routing-options static route 100.64.28.0/24 discard
+set routing-instances CE-28 routing-options rib CE-28.inet6.0 static route 2001:164:28::/48 discard
+set routing-instances CE-28 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.36 family inet
+set routing-instances CE-28 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::24 family inet6
+set routing-instances CE-28 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.29 vlan-id 29 family inet address 172.20.3.39/31
+set interfaces ge-0/0/3.29 vlan-id 29 family inet6 address 2001:200:20:3::27/127
+set interfaces lo0.29 family inet address 100.64.29.1/32
+set interfaces lo0.29 family inet6 address 2001:164:29::1/128
+set routing-instances CE-29 instance-type virtual-router
+set routing-instances CE-29 interface lo0.29
+set routing-instances CE-29 interface ge-0/0/3.29
+set routing-instances CE-29 routing-options autonomous-system 1029 independent-domain
+set routing-instances CE-29 routing-options static route 100.64.29.0/24 discard
+set routing-instances CE-29 routing-options rib CE-29.inet6.0 static route 2001:164:29::/48 discard
+set routing-instances CE-29 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.38 family inet
+set routing-instances CE-29 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::26 family inet6
+set routing-instances CE-29 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.30 vlan-id 30 family inet address 172.20.3.41/31
+set interfaces ge-0/0/3.30 vlan-id 30 family inet6 address 2001:200:20:3::29/127
+set interfaces lo0.30 family inet address 100.64.30.1/32
+set interfaces lo0.30 family inet6 address 2001:164:30::1/128
+set routing-instances CE-30 instance-type virtual-router
+set routing-instances CE-30 interface lo0.30
+set routing-instances CE-30 interface ge-0/0/3.30
+set routing-instances CE-30 routing-options autonomous-system 1030 independent-domain
+set routing-instances CE-30 routing-options static route 100.64.30.0/24 discard
+set routing-instances CE-30 routing-options rib CE-30.inet6.0 static route 2001:164:30::/48 discard
+set routing-instances CE-30 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.40 family inet
+set routing-instances CE-30 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::28 family inet6
+set routing-instances CE-30 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.31 vlan-id 31 family inet address 172.20.3.43/31
+set interfaces ge-0/0/3.31 vlan-id 31 family inet6 address 2001:200:20:3::2b/127
+set interfaces lo0.31 family inet address 100.64.31.1/32
+set interfaces lo0.31 family inet6 address 2001:164:31::1/128
+set routing-instances CE-31 instance-type virtual-router
+set routing-instances CE-31 interface lo0.31
+set routing-instances CE-31 interface ge-0/0/3.31
+set routing-instances CE-31 routing-options autonomous-system 1031 independent-domain
+set routing-instances CE-31 routing-options static route 100.64.31.0/24 discard
+set routing-instances CE-31 routing-options rib CE-31.inet6.0 static route 2001:164:31::/48 discard
+set routing-instances CE-31 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.42 family inet
+set routing-instances CE-31 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::2a family inet6
+set routing-instances CE-31 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.32 vlan-id 32 family inet address 172.20.3.45/31
+set interfaces ge-0/0/3.32 vlan-id 32 family inet6 address 2001:200:20:3::2d/127
+set interfaces lo0.32 family inet address 100.64.32.1/32
+set interfaces lo0.32 family inet6 address 2001:164:32::1/128
+set routing-instances CE-32 instance-type virtual-router
+set routing-instances CE-32 interface lo0.32
+set routing-instances CE-32 interface ge-0/0/3.32
+set routing-instances CE-32 routing-options autonomous-system 1032 independent-domain
+set routing-instances CE-32 routing-options static route 100.64.32.0/24 discard
+set routing-instances CE-32 routing-options rib CE-32.inet6.0 static route 2001:164:32::/48 discard
+set routing-instances CE-32 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.44 family inet
+set routing-instances CE-32 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::2c family inet6
+set routing-instances CE-32 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.33 vlan-id 33 family inet address 172.20.3.47/31
+set interfaces ge-0/0/3.33 vlan-id 33 family inet6 address 2001:200:20:3::2f/127
+set interfaces lo0.33 family inet address 100.64.33.1/32
+set interfaces lo0.33 family inet6 address 2001:164:33::1/128
+set routing-instances CE-33 instance-type virtual-router
+set routing-instances CE-33 interface lo0.33
+set routing-instances CE-33 interface ge-0/0/3.33
+set routing-instances CE-33 routing-options autonomous-system 1033 independent-domain
+set routing-instances CE-33 routing-options static route 100.64.33.0/24 discard
+set routing-instances CE-33 routing-options rib CE-33.inet6.0 static route 2001:164:33::/48 discard
+set routing-instances CE-33 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.46 family inet
+set routing-instances CE-33 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::2e family inet6
+set routing-instances CE-33 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.34 vlan-id 34 family inet address 172.20.3.49/31
+set interfaces ge-0/0/3.34 vlan-id 34 family inet6 address 2001:200:20:3::31/127
+set interfaces lo0.34 family inet address 100.64.34.1/32
+set interfaces lo0.34 family inet6 address 2001:164:34::1/128
+set routing-instances CE-34 instance-type virtual-router
+set routing-instances CE-34 interface lo0.34
+set routing-instances CE-34 interface ge-0/0/3.34
+set routing-instances CE-34 routing-options autonomous-system 1034 independent-domain
+set routing-instances CE-34 routing-options static route 100.64.34.0/24 discard
+set routing-instances CE-34 routing-options rib CE-34.inet6.0 static route 2001:164:34::/48 discard
+set routing-instances CE-34 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.48 family inet
+set routing-instances CE-34 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::30 family inet6
+set routing-instances CE-34 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.35 vlan-id 35 family inet address 172.20.3.51/31
+set interfaces ge-0/0/3.35 vlan-id 35 family inet6 address 2001:200:20:3::33/127
+set interfaces lo0.35 family inet address 100.64.35.1/32
+set interfaces lo0.35 family inet6 address 2001:164:35::1/128
+set routing-instances CE-35 instance-type virtual-router
+set routing-instances CE-35 interface lo0.35
+set routing-instances CE-35 interface ge-0/0/3.35
+set routing-instances CE-35 routing-options autonomous-system 1035 independent-domain
+set routing-instances CE-35 routing-options static route 100.64.35.0/24 discard
+set routing-instances CE-35 routing-options rib CE-35.inet6.0 static route 2001:164:35::/48 discard
+set routing-instances CE-35 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.50 family inet
+set routing-instances CE-35 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::32 family inet6
+set routing-instances CE-35 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.36 vlan-id 36 family inet address 172.20.3.53/31
+set interfaces ge-0/0/3.36 vlan-id 36 family inet6 address 2001:200:20:3::35/127
+set interfaces lo0.36 family inet address 100.64.36.1/32
+set interfaces lo0.36 family inet6 address 2001:164:36::1/128
+set routing-instances CE-36 instance-type virtual-router
+set routing-instances CE-36 interface lo0.36
+set routing-instances CE-36 interface ge-0/0/3.36
+set routing-instances CE-36 routing-options autonomous-system 1036 independent-domain
+set routing-instances CE-36 routing-options static route 100.64.36.0/24 discard
+set routing-instances CE-36 routing-options rib CE-36.inet6.0 static route 2001:164:36::/48 discard
+set routing-instances CE-36 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.52 family inet
+set routing-instances CE-36 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::34 family inet6
+set routing-instances CE-36 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.37 vlan-id 37 family inet address 172.20.3.55/31
+set interfaces ge-0/0/3.37 vlan-id 37 family inet6 address 2001:200:20:3::37/127
+set interfaces lo0.37 family inet address 100.64.37.1/32
+set interfaces lo0.37 family inet6 address 2001:164:37::1/128
+set routing-instances CE-37 instance-type virtual-router
+set routing-instances CE-37 interface lo0.37
+set routing-instances CE-37 interface ge-0/0/3.37
+set routing-instances CE-37 routing-options autonomous-system 1037 independent-domain
+set routing-instances CE-37 routing-options static route 100.64.37.0/24 discard
+set routing-instances CE-37 routing-options rib CE-37.inet6.0 static route 2001:164:37::/48 discard
+set routing-instances CE-37 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.54 family inet
+set routing-instances CE-37 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::36 family inet6
+set routing-instances CE-37 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.38 vlan-id 38 family inet address 172.20.3.57/31
+set interfaces ge-0/0/3.38 vlan-id 38 family inet6 address 2001:200:20:3::39/127
+set interfaces lo0.38 family inet address 100.64.38.1/32
+set interfaces lo0.38 family inet6 address 2001:164:38::1/128
+set routing-instances CE-38 instance-type virtual-router
+set routing-instances CE-38 interface lo0.38
+set routing-instances CE-38 interface ge-0/0/3.38
+set routing-instances CE-38 routing-options autonomous-system 1038 independent-domain
+set routing-instances CE-38 routing-options static route 100.64.38.0/24 discard
+set routing-instances CE-38 routing-options rib CE-38.inet6.0 static route 2001:164:38::/48 discard
+set routing-instances CE-38 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.56 family inet
+set routing-instances CE-38 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::38 family inet6
+set routing-instances CE-38 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.39 vlan-id 39 family inet address 172.20.3.59/31
+set interfaces ge-0/0/3.39 vlan-id 39 family inet6 address 2001:200:20:3::3b/127
+set interfaces lo0.39 family inet address 100.64.39.1/32
+set interfaces lo0.39 family inet6 address 2001:164:39::1/128
+set routing-instances CE-39 instance-type virtual-router
+set routing-instances CE-39 interface lo0.39
+set routing-instances CE-39 interface ge-0/0/3.39
+set routing-instances CE-39 routing-options autonomous-system 1039 independent-domain
+set routing-instances CE-39 routing-options static route 100.64.39.0/24 discard
+set routing-instances CE-39 routing-options rib CE-39.inet6.0 static route 2001:164:39::/48 discard
+set routing-instances CE-39 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.58 family inet
+set routing-instances CE-39 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::3a family inet6
+set routing-instances CE-39 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.40 vlan-id 40 family inet address 172.20.3.61/31
+set interfaces ge-0/0/3.40 vlan-id 40 family inet6 address 2001:200:20:3::3d/127
+set interfaces lo0.40 family inet address 100.64.40.1/32
+set interfaces lo0.40 family inet6 address 2001:164:40::1/128
+set routing-instances CE-40 instance-type virtual-router
+set routing-instances CE-40 interface lo0.40
+set routing-instances CE-40 interface ge-0/0/3.40
+set routing-instances CE-40 routing-options autonomous-system 1040 independent-domain
+set routing-instances CE-40 routing-options static route 100.64.40.0/24 discard
+set routing-instances CE-40 routing-options rib CE-40.inet6.0 static route 2001:164:40::/48 discard
+set routing-instances CE-40 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.60 family inet
+set routing-instances CE-40 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::3c family inet6
+set routing-instances CE-40 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.41 vlan-id 41 family inet address 172.20.3.63/31
+set interfaces ge-0/0/3.41 vlan-id 41 family inet6 address 2001:200:20:3::3f/127
+set interfaces lo0.41 family inet address 100.64.41.1/32
+set interfaces lo0.41 family inet6 address 2001:164:41::1/128
+set routing-instances CE-41 instance-type virtual-router
+set routing-instances CE-41 interface lo0.41
+set routing-instances CE-41 interface ge-0/0/3.41
+set routing-instances CE-41 routing-options autonomous-system 1041 independent-domain
+set routing-instances CE-41 routing-options static route 100.64.41.0/24 discard
+set routing-instances CE-41 routing-options rib CE-41.inet6.0 static route 2001:164:41::/48 discard
+set routing-instances CE-41 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.62 family inet
+set routing-instances CE-41 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::3e family inet6
+set routing-instances CE-41 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.42 vlan-id 42 family inet address 172.20.3.65/31
+set interfaces ge-0/0/3.42 vlan-id 42 family inet6 address 2001:200:20:3::41/127
+set interfaces lo0.42 family inet address 100.64.42.1/32
+set interfaces lo0.42 family inet6 address 2001:164:42::1/128
+set routing-instances CE-42 instance-type virtual-router
+set routing-instances CE-42 interface lo0.42
+set routing-instances CE-42 interface ge-0/0/3.42
+set routing-instances CE-42 routing-options autonomous-system 1042 independent-domain
+set routing-instances CE-42 routing-options static route 100.64.42.0/24 discard
+set routing-instances CE-42 routing-options rib CE-42.inet6.0 static route 2001:164:42::/48 discard
+set routing-instances CE-42 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.64 family inet
+set routing-instances CE-42 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::40 family inet6
+set routing-instances CE-42 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.43 vlan-id 43 family inet address 172.20.3.67/31
+set interfaces ge-0/0/3.43 vlan-id 43 family inet6 address 2001:200:20:3::43/127
+set interfaces lo0.43 family inet address 100.64.43.1/32
+set interfaces lo0.43 family inet6 address 2001:164:43::1/128
+set routing-instances CE-43 instance-type virtual-router
+set routing-instances CE-43 interface lo0.43
+set routing-instances CE-43 interface ge-0/0/3.43
+set routing-instances CE-43 routing-options autonomous-system 1043 independent-domain
+set routing-instances CE-43 routing-options static route 100.64.43.0/24 discard
+set routing-instances CE-43 routing-options rib CE-43.inet6.0 static route 2001:164:43::/48 discard
+set routing-instances CE-43 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.66 family inet
+set routing-instances CE-43 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::42 family inet6
+set routing-instances CE-43 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.44 vlan-id 44 family inet address 172.20.3.69/31
+set interfaces ge-0/0/3.44 vlan-id 44 family inet6 address 2001:200:20:3::45/127
+set interfaces lo0.44 family inet address 100.64.44.1/32
+set interfaces lo0.44 family inet6 address 2001:164:44::1/128
+set routing-instances CE-44 instance-type virtual-router
+set routing-instances CE-44 interface lo0.44
+set routing-instances CE-44 interface ge-0/0/3.44
+set routing-instances CE-44 routing-options autonomous-system 1044 independent-domain
+set routing-instances CE-44 routing-options static route 100.64.44.0/24 discard
+set routing-instances CE-44 routing-options rib CE-44.inet6.0 static route 2001:164:44::/48 discard
+set routing-instances CE-44 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.68 family inet
+set routing-instances CE-44 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::44 family inet6
+set routing-instances CE-44 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.45 vlan-id 45 family inet address 172.20.3.71/31
+set interfaces ge-0/0/3.45 vlan-id 45 family inet6 address 2001:200:20:3::47/127
+set interfaces lo0.45 family inet address 100.64.45.1/32
+set interfaces lo0.45 family inet6 address 2001:164:45::1/128
+set routing-instances CE-45 instance-type virtual-router
+set routing-instances CE-45 interface lo0.45
+set routing-instances CE-45 interface ge-0/0/3.45
+set routing-instances CE-45 routing-options autonomous-system 1045 independent-domain
+set routing-instances CE-45 routing-options static route 100.64.45.0/24 discard
+set routing-instances CE-45 routing-options rib CE-45.inet6.0 static route 2001:164:45::/48 discard
+set routing-instances CE-45 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.70 family inet
+set routing-instances CE-45 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::46 family inet6
+set routing-instances CE-45 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.46 vlan-id 46 family inet address 172.20.3.73/31
+set interfaces ge-0/0/3.46 vlan-id 46 family inet6 address 2001:200:20:3::49/127
+set interfaces lo0.46 family inet address 100.64.46.1/32
+set interfaces lo0.46 family inet6 address 2001:164:46::1/128
+set routing-instances CE-46 instance-type virtual-router
+set routing-instances CE-46 interface lo0.46
+set routing-instances CE-46 interface ge-0/0/3.46
+set routing-instances CE-46 routing-options autonomous-system 1046 independent-domain
+set routing-instances CE-46 routing-options static route 100.64.46.0/24 discard
+set routing-instances CE-46 routing-options rib CE-46.inet6.0 static route 2001:164:46::/48 discard
+set routing-instances CE-46 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.72 family inet
+set routing-instances CE-46 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::48 family inet6
+set routing-instances CE-46 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.47 vlan-id 47 family inet address 172.20.3.75/31
+set interfaces ge-0/0/3.47 vlan-id 47 family inet6 address 2001:200:20:3::4b/127
+set interfaces lo0.47 family inet address 100.64.47.1/32
+set interfaces lo0.47 family inet6 address 2001:164:47::1/128
+set routing-instances CE-47 instance-type virtual-router
+set routing-instances CE-47 interface lo0.47
+set routing-instances CE-47 interface ge-0/0/3.47
+set routing-instances CE-47 routing-options autonomous-system 1047 independent-domain
+set routing-instances CE-47 routing-options static route 100.64.47.0/24 discard
+set routing-instances CE-47 routing-options rib CE-47.inet6.0 static route 2001:164:47::/48 discard
+set routing-instances CE-47 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.74 family inet
+set routing-instances CE-47 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::4a family inet6
+set routing-instances CE-47 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.48 vlan-id 48 family inet address 172.20.3.77/31
+set interfaces ge-0/0/3.48 vlan-id 48 family inet6 address 2001:200:20:3::4d/127
+set interfaces lo0.48 family inet address 100.64.48.1/32
+set interfaces lo0.48 family inet6 address 2001:164:48::1/128
+set routing-instances CE-48 instance-type virtual-router
+set routing-instances CE-48 interface lo0.48
+set routing-instances CE-48 interface ge-0/0/3.48
+set routing-instances CE-48 routing-options autonomous-system 1048 independent-domain
+set routing-instances CE-48 routing-options static route 100.64.48.0/24 discard
+set routing-instances CE-48 routing-options rib CE-48.inet6.0 static route 2001:164:48::/48 discard
+set routing-instances CE-48 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.76 family inet
+set routing-instances CE-48 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::4c family inet6
+set routing-instances CE-48 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.49 vlan-id 49 family inet address 172.20.3.79/31
+set interfaces ge-0/0/3.49 vlan-id 49 family inet6 address 2001:200:20:3::4f/127
+set interfaces lo0.49 family inet address 100.64.49.1/32
+set interfaces lo0.49 family inet6 address 2001:164:49::1/128
+set routing-instances CE-49 instance-type virtual-router
+set routing-instances CE-49 interface lo0.49
+set routing-instances CE-49 interface ge-0/0/3.49
+set routing-instances CE-49 routing-options autonomous-system 1049 independent-domain
+set routing-instances CE-49 routing-options static route 100.64.49.0/24 discard
+set routing-instances CE-49 routing-options rib CE-49.inet6.0 static route 2001:164:49::/48 discard
+set routing-instances CE-49 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.78 family inet
+set routing-instances CE-49 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::4e family inet6
+set routing-instances CE-49 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.50 vlan-id 50 family inet address 172.20.3.81/31
+set interfaces ge-0/0/3.50 vlan-id 50 family inet6 address 2001:200:20:3::51/127
+set interfaces lo0.50 family inet address 100.64.50.1/32
+set interfaces lo0.50 family inet6 address 2001:164:50::1/128
+set routing-instances CE-50 instance-type virtual-router
+set routing-instances CE-50 interface lo0.50
+set routing-instances CE-50 interface ge-0/0/3.50
+set routing-instances CE-50 routing-options autonomous-system 1050 independent-domain
+set routing-instances CE-50 routing-options static route 100.64.50.0/24 discard
+set routing-instances CE-50 routing-options rib CE-50.inet6.0 static route 2001:164:50::/48 discard
+set routing-instances CE-50 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.80 family inet
+set routing-instances CE-50 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::50 family inet6
+set routing-instances CE-50 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.51 vlan-id 51 family inet address 172.20.3.83/31
+set interfaces ge-0/0/3.51 vlan-id 51 family inet6 address 2001:200:20:3::53/127
+set interfaces lo0.51 family inet address 100.64.51.1/32
+set interfaces lo0.51 family inet6 address 2001:164:51::1/128
+set routing-instances CE-51 instance-type virtual-router
+set routing-instances CE-51 interface lo0.51
+set routing-instances CE-51 interface ge-0/0/3.51
+set routing-instances CE-51 routing-options autonomous-system 1051 independent-domain
+set routing-instances CE-51 routing-options static route 100.64.51.0/24 discard
+set routing-instances CE-51 routing-options rib CE-51.inet6.0 static route 2001:164:51::/48 discard
+set routing-instances CE-51 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.82 family inet
+set routing-instances CE-51 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::52 family inet6
+set routing-instances CE-51 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.52 vlan-id 52 family inet address 172.20.3.85/31
+set interfaces ge-0/0/3.52 vlan-id 52 family inet6 address 2001:200:20:3::55/127
+set interfaces lo0.52 family inet address 100.64.52.1/32
+set interfaces lo0.52 family inet6 address 2001:164:52::1/128
+set routing-instances CE-52 instance-type virtual-router
+set routing-instances CE-52 interface lo0.52
+set routing-instances CE-52 interface ge-0/0/3.52
+set routing-instances CE-52 routing-options autonomous-system 1052 independent-domain
+set routing-instances CE-52 routing-options static route 100.64.52.0/24 discard
+set routing-instances CE-52 routing-options rib CE-52.inet6.0 static route 2001:164:52::/48 discard
+set routing-instances CE-52 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.84 family inet
+set routing-instances CE-52 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::54 family inet6
+set routing-instances CE-52 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.53 vlan-id 53 family inet address 172.20.3.87/31
+set interfaces ge-0/0/3.53 vlan-id 53 family inet6 address 2001:200:20:3::57/127
+set interfaces lo0.53 family inet address 100.64.53.1/32
+set interfaces lo0.53 family inet6 address 2001:164:53::1/128
+set routing-instances CE-53 instance-type virtual-router
+set routing-instances CE-53 interface lo0.53
+set routing-instances CE-53 interface ge-0/0/3.53
+set routing-instances CE-53 routing-options autonomous-system 1053 independent-domain
+set routing-instances CE-53 routing-options static route 100.64.53.0/24 discard
+set routing-instances CE-53 routing-options rib CE-53.inet6.0 static route 2001:164:53::/48 discard
+set routing-instances CE-53 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.86 family inet
+set routing-instances CE-53 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::56 family inet6
+set routing-instances CE-53 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.54 vlan-id 54 family inet address 172.20.3.89/31
+set interfaces ge-0/0/3.54 vlan-id 54 family inet6 address 2001:200:20:3::59/127
+set interfaces lo0.54 family inet address 100.64.54.1/32
+set interfaces lo0.54 family inet6 address 2001:164:54::1/128
+set routing-instances CE-54 instance-type virtual-router
+set routing-instances CE-54 interface lo0.54
+set routing-instances CE-54 interface ge-0/0/3.54
+set routing-instances CE-54 routing-options autonomous-system 1054 independent-domain
+set routing-instances CE-54 routing-options static route 100.64.54.0/24 discard
+set routing-instances CE-54 routing-options rib CE-54.inet6.0 static route 2001:164:54::/48 discard
+set routing-instances CE-54 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.88 family inet
+set routing-instances CE-54 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::58 family inet6
+set routing-instances CE-54 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.55 vlan-id 55 family inet address 172.20.3.91/31
+set interfaces ge-0/0/3.55 vlan-id 55 family inet6 address 2001:200:20:3::5b/127
+set interfaces lo0.55 family inet address 100.64.55.1/32
+set interfaces lo0.55 family inet6 address 2001:164:55::1/128
+set routing-instances CE-55 instance-type virtual-router
+set routing-instances CE-55 interface lo0.55
+set routing-instances CE-55 interface ge-0/0/3.55
+set routing-instances CE-55 routing-options autonomous-system 1055 independent-domain
+set routing-instances CE-55 routing-options static route 100.64.55.0/24 discard
+set routing-instances CE-55 routing-options rib CE-55.inet6.0 static route 2001:164:55::/48 discard
+set routing-instances CE-55 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.90 family inet
+set routing-instances CE-55 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::5a family inet6
+set routing-instances CE-55 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.56 vlan-id 56 family inet address 172.20.3.93/31
+set interfaces ge-0/0/3.56 vlan-id 56 family inet6 address 2001:200:20:3::5d/127
+set interfaces lo0.56 family inet address 100.64.56.1/32
+set interfaces lo0.56 family inet6 address 2001:164:56::1/128
+set routing-instances CE-56 instance-type virtual-router
+set routing-instances CE-56 interface lo0.56
+set routing-instances CE-56 interface ge-0/0/3.56
+set routing-instances CE-56 routing-options autonomous-system 1056 independent-domain
+set routing-instances CE-56 routing-options static route 100.64.56.0/24 discard
+set routing-instances CE-56 routing-options rib CE-56.inet6.0 static route 2001:164:56::/48 discard
+set routing-instances CE-56 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.92 family inet
+set routing-instances CE-56 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::5c family inet6
+set routing-instances CE-56 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.57 vlan-id 57 family inet address 172.20.3.95/31
+set interfaces ge-0/0/3.57 vlan-id 57 family inet6 address 2001:200:20:3::5f/127
+set interfaces lo0.57 family inet address 100.64.57.1/32
+set interfaces lo0.57 family inet6 address 2001:164:57::1/128
+set routing-instances CE-57 instance-type virtual-router
+set routing-instances CE-57 interface lo0.57
+set routing-instances CE-57 interface ge-0/0/3.57
+set routing-instances CE-57 routing-options autonomous-system 1057 independent-domain
+set routing-instances CE-57 routing-options static route 100.64.57.0/24 discard
+set routing-instances CE-57 routing-options rib CE-57.inet6.0 static route 2001:164:57::/48 discard
+set routing-instances CE-57 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.94 family inet
+set routing-instances CE-57 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::5e family inet6
+set routing-instances CE-57 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.58 vlan-id 58 family inet address 172.20.3.97/31
+set interfaces ge-0/0/3.58 vlan-id 58 family inet6 address 2001:200:20:3::61/127
+set interfaces lo0.58 family inet address 100.64.58.1/32
+set interfaces lo0.58 family inet6 address 2001:164:58::1/128
+set routing-instances CE-58 instance-type virtual-router
+set routing-instances CE-58 interface lo0.58
+set routing-instances CE-58 interface ge-0/0/3.58
+set routing-instances CE-58 routing-options autonomous-system 1058 independent-domain
+set routing-instances CE-58 routing-options static route 100.64.58.0/24 discard
+set routing-instances CE-58 routing-options rib CE-58.inet6.0 static route 2001:164:58::/48 discard
+set routing-instances CE-58 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.96 family inet
+set routing-instances CE-58 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::60 family inet6
+set routing-instances CE-58 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.59 vlan-id 59 family inet address 172.20.3.99/31
+set interfaces ge-0/0/3.59 vlan-id 59 family inet6 address 2001:200:20:3::63/127
+set interfaces lo0.59 family inet address 100.64.59.1/32
+set interfaces lo0.59 family inet6 address 2001:164:59::1/128
+set routing-instances CE-59 instance-type virtual-router
+set routing-instances CE-59 interface lo0.59
+set routing-instances CE-59 interface ge-0/0/3.59
+set routing-instances CE-59 routing-options autonomous-system 1059 independent-domain
+set routing-instances CE-59 routing-options static route 100.64.59.0/24 discard
+set routing-instances CE-59 routing-options rib CE-59.inet6.0 static route 2001:164:59::/48 discard
+set routing-instances CE-59 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.98 family inet
+set routing-instances CE-59 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::62 family inet6
+set routing-instances CE-59 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.60 vlan-id 60 family inet address 172.20.3.101/31
+set interfaces ge-0/0/3.60 vlan-id 60 family inet6 address 2001:200:20:3::65/127
+set interfaces lo0.60 family inet address 100.64.60.1/32
+set interfaces lo0.60 family inet6 address 2001:164:60::1/128
+set routing-instances CE-60 instance-type virtual-router
+set routing-instances CE-60 interface lo0.60
+set routing-instances CE-60 interface ge-0/0/3.60
+set routing-instances CE-60 routing-options autonomous-system 1060 independent-domain
+set routing-instances CE-60 routing-options static route 100.64.60.0/24 discard
+set routing-instances CE-60 routing-options rib CE-60.inet6.0 static route 2001:164:60::/48 discard
+set routing-instances CE-60 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.100 family inet
+set routing-instances CE-60 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::64 family inet6
+set routing-instances CE-60 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.61 vlan-id 61 family inet address 172.20.3.103/31
+set interfaces ge-0/0/3.61 vlan-id 61 family inet6 address 2001:200:20:3::67/127
+set interfaces lo0.61 family inet address 100.64.61.1/32
+set interfaces lo0.61 family inet6 address 2001:164:61::1/128
+set routing-instances CE-61 instance-type virtual-router
+set routing-instances CE-61 interface lo0.61
+set routing-instances CE-61 interface ge-0/0/3.61
+set routing-instances CE-61 routing-options autonomous-system 1061 independent-domain
+set routing-instances CE-61 routing-options static route 100.64.61.0/24 discard
+set routing-instances CE-61 routing-options rib CE-61.inet6.0 static route 2001:164:61::/48 discard
+set routing-instances CE-61 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.102 family inet
+set routing-instances CE-61 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::66 family inet6
+set routing-instances CE-61 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.62 vlan-id 62 family inet address 172.20.3.105/31
+set interfaces ge-0/0/3.62 vlan-id 62 family inet6 address 2001:200:20:3::69/127
+set interfaces lo0.62 family inet address 100.64.62.1/32
+set interfaces lo0.62 family inet6 address 2001:164:62::1/128
+set routing-instances CE-62 instance-type virtual-router
+set routing-instances CE-62 interface lo0.62
+set routing-instances CE-62 interface ge-0/0/3.62
+set routing-instances CE-62 routing-options autonomous-system 1062 independent-domain
+set routing-instances CE-62 routing-options static route 100.64.62.0/24 discard
+set routing-instances CE-62 routing-options rib CE-62.inet6.0 static route 2001:164:62::/48 discard
+set routing-instances CE-62 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.104 family inet
+set routing-instances CE-62 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::68 family inet6
+set routing-instances CE-62 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.63 vlan-id 63 family inet address 172.20.3.107/31
+set interfaces ge-0/0/3.63 vlan-id 63 family inet6 address 2001:200:20:3::6b/127
+set interfaces lo0.63 family inet address 100.64.63.1/32
+set interfaces lo0.63 family inet6 address 2001:164:63::1/128
+set routing-instances CE-63 instance-type virtual-router
+set routing-instances CE-63 interface lo0.63
+set routing-instances CE-63 interface ge-0/0/3.63
+set routing-instances CE-63 routing-options autonomous-system 1063 independent-domain
+set routing-instances CE-63 routing-options static route 100.64.63.0/24 discard
+set routing-instances CE-63 routing-options rib CE-63.inet6.0 static route 2001:164:63::/48 discard
+set routing-instances CE-63 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.106 family inet
+set routing-instances CE-63 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::6a family inet6
+set routing-instances CE-63 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.64 vlan-id 64 family inet address 172.20.3.109/31
+set interfaces ge-0/0/3.64 vlan-id 64 family inet6 address 2001:200:20:3::6d/127
+set interfaces lo0.64 family inet address 100.64.64.1/32
+set interfaces lo0.64 family inet6 address 2001:164:64::1/128
+set routing-instances CE-64 instance-type virtual-router
+set routing-instances CE-64 interface lo0.64
+set routing-instances CE-64 interface ge-0/0/3.64
+set routing-instances CE-64 routing-options autonomous-system 1064 independent-domain
+set routing-instances CE-64 routing-options static route 100.64.64.0/24 discard
+set routing-instances CE-64 routing-options rib CE-64.inet6.0 static route 2001:164:64::/48 discard
+set routing-instances CE-64 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.108 family inet
+set routing-instances CE-64 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::6c family inet6
+set routing-instances CE-64 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.65 vlan-id 65 family inet address 172.20.3.111/31
+set interfaces ge-0/0/3.65 vlan-id 65 family inet6 address 2001:200:20:3::6f/127
+set interfaces lo0.65 family inet address 100.64.65.1/32
+set interfaces lo0.65 family inet6 address 2001:164:65::1/128
+set routing-instances CE-65 instance-type virtual-router
+set routing-instances CE-65 interface lo0.65
+set routing-instances CE-65 interface ge-0/0/3.65
+set routing-instances CE-65 routing-options autonomous-system 1065 independent-domain
+set routing-instances CE-65 routing-options static route 100.64.65.0/24 discard
+set routing-instances CE-65 routing-options rib CE-65.inet6.0 static route 2001:164:65::/48 discard
+set routing-instances CE-65 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.110 family inet
+set routing-instances CE-65 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::6e family inet6
+set routing-instances CE-65 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.66 vlan-id 66 family inet address 172.20.3.113/31
+set interfaces ge-0/0/3.66 vlan-id 66 family inet6 address 2001:200:20:3::71/127
+set interfaces lo0.66 family inet address 100.64.66.1/32
+set interfaces lo0.66 family inet6 address 2001:164:66::1/128
+set routing-instances CE-66 instance-type virtual-router
+set routing-instances CE-66 interface lo0.66
+set routing-instances CE-66 interface ge-0/0/3.66
+set routing-instances CE-66 routing-options autonomous-system 1066 independent-domain
+set routing-instances CE-66 routing-options static route 100.64.66.0/24 discard
+set routing-instances CE-66 routing-options rib CE-66.inet6.0 static route 2001:164:66::/48 discard
+set routing-instances CE-66 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.112 family inet
+set routing-instances CE-66 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::70 family inet6
+set routing-instances CE-66 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.67 vlan-id 67 family inet address 172.20.3.115/31
+set interfaces ge-0/0/3.67 vlan-id 67 family inet6 address 2001:200:20:3::73/127
+set interfaces lo0.67 family inet address 100.64.67.1/32
+set interfaces lo0.67 family inet6 address 2001:164:67::1/128
+set routing-instances CE-67 instance-type virtual-router
+set routing-instances CE-67 interface lo0.67
+set routing-instances CE-67 interface ge-0/0/3.67
+set routing-instances CE-67 routing-options autonomous-system 1067 independent-domain
+set routing-instances CE-67 routing-options static route 100.64.67.0/24 discard
+set routing-instances CE-67 routing-options rib CE-67.inet6.0 static route 2001:164:67::/48 discard
+set routing-instances CE-67 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.114 family inet
+set routing-instances CE-67 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::72 family inet6
+set routing-instances CE-67 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.68 vlan-id 68 family inet address 172.20.3.117/31
+set interfaces ge-0/0/3.68 vlan-id 68 family inet6 address 2001:200:20:3::75/127
+set interfaces lo0.68 family inet address 100.64.68.1/32
+set interfaces lo0.68 family inet6 address 2001:164:68::1/128
+set routing-instances CE-68 instance-type virtual-router
+set routing-instances CE-68 interface lo0.68
+set routing-instances CE-68 interface ge-0/0/3.68
+set routing-instances CE-68 routing-options autonomous-system 1068 independent-domain
+set routing-instances CE-68 routing-options static route 100.64.68.0/24 discard
+set routing-instances CE-68 routing-options rib CE-68.inet6.0 static route 2001:164:68::/48 discard
+set routing-instances CE-68 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.116 family inet
+set routing-instances CE-68 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::74 family inet6
+set routing-instances CE-68 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.69 vlan-id 69 family inet address 172.20.3.119/31
+set interfaces ge-0/0/3.69 vlan-id 69 family inet6 address 2001:200:20:3::77/127
+set interfaces lo0.69 family inet address 100.64.69.1/32
+set interfaces lo0.69 family inet6 address 2001:164:69::1/128
+set routing-instances CE-69 instance-type virtual-router
+set routing-instances CE-69 interface lo0.69
+set routing-instances CE-69 interface ge-0/0/3.69
+set routing-instances CE-69 routing-options autonomous-system 1069 independent-domain
+set routing-instances CE-69 routing-options static route 100.64.69.0/24 discard
+set routing-instances CE-69 routing-options rib CE-69.inet6.0 static route 2001:164:69::/48 discard
+set routing-instances CE-69 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.118 family inet
+set routing-instances CE-69 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::76 family inet6
+set routing-instances CE-69 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.70 vlan-id 70 family inet address 172.20.3.121/31
+set interfaces ge-0/0/3.70 vlan-id 70 family inet6 address 2001:200:20:3::79/127
+set interfaces lo0.70 family inet address 100.64.70.1/32
+set interfaces lo0.70 family inet6 address 2001:164:70::1/128
+set routing-instances CE-70 instance-type virtual-router
+set routing-instances CE-70 interface lo0.70
+set routing-instances CE-70 interface ge-0/0/3.70
+set routing-instances CE-70 routing-options autonomous-system 1070 independent-domain
+set routing-instances CE-70 routing-options static route 100.64.70.0/24 discard
+set routing-instances CE-70 routing-options rib CE-70.inet6.0 static route 2001:164:70::/48 discard
+set routing-instances CE-70 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.120 family inet
+set routing-instances CE-70 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::78 family inet6
+set routing-instances CE-70 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.71 vlan-id 71 family inet address 172.20.3.123/31
+set interfaces ge-0/0/3.71 vlan-id 71 family inet6 address 2001:200:20:3::7b/127
+set interfaces lo0.71 family inet address 100.64.71.1/32
+set interfaces lo0.71 family inet6 address 2001:164:71::1/128
+set routing-instances CE-71 instance-type virtual-router
+set routing-instances CE-71 interface lo0.71
+set routing-instances CE-71 interface ge-0/0/3.71
+set routing-instances CE-71 routing-options autonomous-system 1071 independent-domain
+set routing-instances CE-71 routing-options static route 100.64.71.0/24 discard
+set routing-instances CE-71 routing-options rib CE-71.inet6.0 static route 2001:164:71::/48 discard
+set routing-instances CE-71 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.122 family inet
+set routing-instances CE-71 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::7a family inet6
+set routing-instances CE-71 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.72 vlan-id 72 family inet address 172.20.3.125/31
+set interfaces ge-0/0/3.72 vlan-id 72 family inet6 address 2001:200:20:3::7d/127
+set interfaces lo0.72 family inet address 100.64.72.1/32
+set interfaces lo0.72 family inet6 address 2001:164:72::1/128
+set routing-instances CE-72 instance-type virtual-router
+set routing-instances CE-72 interface lo0.72
+set routing-instances CE-72 interface ge-0/0/3.72
+set routing-instances CE-72 routing-options autonomous-system 1072 independent-domain
+set routing-instances CE-72 routing-options static route 100.64.72.0/24 discard
+set routing-instances CE-72 routing-options rib CE-72.inet6.0 static route 2001:164:72::/48 discard
+set routing-instances CE-72 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.124 family inet
+set routing-instances CE-72 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::7c family inet6
+set routing-instances CE-72 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.73 vlan-id 73 family inet address 172.20.3.127/31
+set interfaces ge-0/0/3.73 vlan-id 73 family inet6 address 2001:200:20:3::7f/127
+set interfaces lo0.73 family inet address 100.64.73.1/32
+set interfaces lo0.73 family inet6 address 2001:164:73::1/128
+set routing-instances CE-73 instance-type virtual-router
+set routing-instances CE-73 interface lo0.73
+set routing-instances CE-73 interface ge-0/0/3.73
+set routing-instances CE-73 routing-options autonomous-system 1073 independent-domain
+set routing-instances CE-73 routing-options static route 100.64.73.0/24 discard
+set routing-instances CE-73 routing-options rib CE-73.inet6.0 static route 2001:164:73::/48 discard
+set routing-instances CE-73 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.126 family inet
+set routing-instances CE-73 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::7e family inet6
+set routing-instances CE-73 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.74 vlan-id 74 family inet address 172.20.3.129/31
+set interfaces ge-0/0/3.74 vlan-id 74 family inet6 address 2001:200:20:3::81/127
+set interfaces lo0.74 family inet address 100.64.74.1/32
+set interfaces lo0.74 family inet6 address 2001:164:74::1/128
+set routing-instances CE-74 instance-type virtual-router
+set routing-instances CE-74 interface lo0.74
+set routing-instances CE-74 interface ge-0/0/3.74
+set routing-instances CE-74 routing-options autonomous-system 1074 independent-domain
+set routing-instances CE-74 routing-options static route 100.64.74.0/24 discard
+set routing-instances CE-74 routing-options rib CE-74.inet6.0 static route 2001:164:74::/48 discard
+set routing-instances CE-74 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.128 family inet
+set routing-instances CE-74 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::80 family inet6
+set routing-instances CE-74 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.75 vlan-id 75 family inet address 172.20.3.131/31
+set interfaces ge-0/0/3.75 vlan-id 75 family inet6 address 2001:200:20:3::83/127
+set interfaces lo0.75 family inet address 100.64.75.1/32
+set interfaces lo0.75 family inet6 address 2001:164:75::1/128
+set routing-instances CE-75 instance-type virtual-router
+set routing-instances CE-75 interface lo0.75
+set routing-instances CE-75 interface ge-0/0/3.75
+set routing-instances CE-75 routing-options autonomous-system 1075 independent-domain
+set routing-instances CE-75 routing-options static route 100.64.75.0/24 discard
+set routing-instances CE-75 routing-options rib CE-75.inet6.0 static route 2001:164:75::/48 discard
+set routing-instances CE-75 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.130 family inet
+set routing-instances CE-75 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::82 family inet6
+set routing-instances CE-75 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.76 vlan-id 76 family inet address 172.20.3.133/31
+set interfaces ge-0/0/3.76 vlan-id 76 family inet6 address 2001:200:20:3::85/127
+set interfaces lo0.76 family inet address 100.64.76.1/32
+set interfaces lo0.76 family inet6 address 2001:164:76::1/128
+set routing-instances CE-76 instance-type virtual-router
+set routing-instances CE-76 interface lo0.76
+set routing-instances CE-76 interface ge-0/0/3.76
+set routing-instances CE-76 routing-options autonomous-system 1076 independent-domain
+set routing-instances CE-76 routing-options static route 100.64.76.0/24 discard
+set routing-instances CE-76 routing-options rib CE-76.inet6.0 static route 2001:164:76::/48 discard
+set routing-instances CE-76 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.132 family inet
+set routing-instances CE-76 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::84 family inet6
+set routing-instances CE-76 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.77 vlan-id 77 family inet address 172.20.3.135/31
+set interfaces ge-0/0/3.77 vlan-id 77 family inet6 address 2001:200:20:3::87/127
+set interfaces lo0.77 family inet address 100.64.77.1/32
+set interfaces lo0.77 family inet6 address 2001:164:77::1/128
+set routing-instances CE-77 instance-type virtual-router
+set routing-instances CE-77 interface lo0.77
+set routing-instances CE-77 interface ge-0/0/3.77
+set routing-instances CE-77 routing-options autonomous-system 1077 independent-domain
+set routing-instances CE-77 routing-options static route 100.64.77.0/24 discard
+set routing-instances CE-77 routing-options rib CE-77.inet6.0 static route 2001:164:77::/48 discard
+set routing-instances CE-77 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.134 family inet
+set routing-instances CE-77 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::86 family inet6
+set routing-instances CE-77 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.78 vlan-id 78 family inet address 172.20.3.137/31
+set interfaces ge-0/0/3.78 vlan-id 78 family inet6 address 2001:200:20:3::89/127
+set interfaces lo0.78 family inet address 100.64.78.1/32
+set interfaces lo0.78 family inet6 address 2001:164:78::1/128
+set routing-instances CE-78 instance-type virtual-router
+set routing-instances CE-78 interface lo0.78
+set routing-instances CE-78 interface ge-0/0/3.78
+set routing-instances CE-78 routing-options autonomous-system 1078 independent-domain
+set routing-instances CE-78 routing-options static route 100.64.78.0/24 discard
+set routing-instances CE-78 routing-options rib CE-78.inet6.0 static route 2001:164:78::/48 discard
+set routing-instances CE-78 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.136 family inet
+set routing-instances CE-78 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::88 family inet6
+set routing-instances CE-78 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.79 vlan-id 79 family inet address 172.20.3.139/31
+set interfaces ge-0/0/3.79 vlan-id 79 family inet6 address 2001:200:20:3::8b/127
+set interfaces lo0.79 family inet address 100.64.79.1/32
+set interfaces lo0.79 family inet6 address 2001:164:79::1/128
+set routing-instances CE-79 instance-type virtual-router
+set routing-instances CE-79 interface lo0.79
+set routing-instances CE-79 interface ge-0/0/3.79
+set routing-instances CE-79 routing-options autonomous-system 1079 independent-domain
+set routing-instances CE-79 routing-options static route 100.64.79.0/24 discard
+set routing-instances CE-79 routing-options rib CE-79.inet6.0 static route 2001:164:79::/48 discard
+set routing-instances CE-79 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.138 family inet
+set routing-instances CE-79 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::8a family inet6
+set routing-instances CE-79 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.80 vlan-id 80 family inet address 172.20.3.141/31
+set interfaces ge-0/0/3.80 vlan-id 80 family inet6 address 2001:200:20:3::8d/127
+set interfaces lo0.80 family inet address 100.64.80.1/32
+set interfaces lo0.80 family inet6 address 2001:164:80::1/128
+set routing-instances CE-80 instance-type virtual-router
+set routing-instances CE-80 interface lo0.80
+set routing-instances CE-80 interface ge-0/0/3.80
+set routing-instances CE-80 routing-options autonomous-system 1080 independent-domain
+set routing-instances CE-80 routing-options static route 100.64.80.0/24 discard
+set routing-instances CE-80 routing-options rib CE-80.inet6.0 static route 2001:164:80::/48 discard
+set routing-instances CE-80 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.140 family inet
+set routing-instances CE-80 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::8c family inet6
+set routing-instances CE-80 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.81 vlan-id 81 family inet address 172.20.3.143/31
+set interfaces ge-0/0/3.81 vlan-id 81 family inet6 address 2001:200:20:3::8f/127
+set interfaces lo0.81 family inet address 100.64.81.1/32
+set interfaces lo0.81 family inet6 address 2001:164:81::1/128
+set routing-instances CE-81 instance-type virtual-router
+set routing-instances CE-81 interface lo0.81
+set routing-instances CE-81 interface ge-0/0/3.81
+set routing-instances CE-81 routing-options autonomous-system 1081 independent-domain
+set routing-instances CE-81 routing-options static route 100.64.81.0/24 discard
+set routing-instances CE-81 routing-options rib CE-81.inet6.0 static route 2001:164:81::/48 discard
+set routing-instances CE-81 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.142 family inet
+set routing-instances CE-81 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::8e family inet6
+set routing-instances CE-81 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.82 vlan-id 82 family inet address 172.20.3.145/31
+set interfaces ge-0/0/3.82 vlan-id 82 family inet6 address 2001:200:20:3::91/127
+set interfaces lo0.82 family inet address 100.64.82.1/32
+set interfaces lo0.82 family inet6 address 2001:164:82::1/128
+set routing-instances CE-82 instance-type virtual-router
+set routing-instances CE-82 interface lo0.82
+set routing-instances CE-82 interface ge-0/0/3.82
+set routing-instances CE-82 routing-options autonomous-system 1082 independent-domain
+set routing-instances CE-82 routing-options static route 100.64.82.0/24 discard
+set routing-instances CE-82 routing-options rib CE-82.inet6.0 static route 2001:164:82::/48 discard
+set routing-instances CE-82 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.144 family inet
+set routing-instances CE-82 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::90 family inet6
+set routing-instances CE-82 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.83 vlan-id 83 family inet address 172.20.3.147/31
+set interfaces ge-0/0/3.83 vlan-id 83 family inet6 address 2001:200:20:3::93/127
+set interfaces lo0.83 family inet address 100.64.83.1/32
+set interfaces lo0.83 family inet6 address 2001:164:83::1/128
+set routing-instances CE-83 instance-type virtual-router
+set routing-instances CE-83 interface lo0.83
+set routing-instances CE-83 interface ge-0/0/3.83
+set routing-instances CE-83 routing-options autonomous-system 1083 independent-domain
+set routing-instances CE-83 routing-options static route 100.64.83.0/24 discard
+set routing-instances CE-83 routing-options rib CE-83.inet6.0 static route 2001:164:83::/48 discard
+set routing-instances CE-83 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.146 family inet
+set routing-instances CE-83 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::92 family inet6
+set routing-instances CE-83 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.84 vlan-id 84 family inet address 172.20.3.149/31
+set interfaces ge-0/0/3.84 vlan-id 84 family inet6 address 2001:200:20:3::95/127
+set interfaces lo0.84 family inet address 100.64.84.1/32
+set interfaces lo0.84 family inet6 address 2001:164:84::1/128
+set routing-instances CE-84 instance-type virtual-router
+set routing-instances CE-84 interface lo0.84
+set routing-instances CE-84 interface ge-0/0/3.84
+set routing-instances CE-84 routing-options autonomous-system 1084 independent-domain
+set routing-instances CE-84 routing-options static route 100.64.84.0/24 discard
+set routing-instances CE-84 routing-options rib CE-84.inet6.0 static route 2001:164:84::/48 discard
+set routing-instances CE-84 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.148 family inet
+set routing-instances CE-84 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::94 family inet6
+set routing-instances CE-84 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.85 vlan-id 85 family inet address 172.20.3.151/31
+set interfaces ge-0/0/3.85 vlan-id 85 family inet6 address 2001:200:20:3::97/127
+set interfaces lo0.85 family inet address 100.64.85.1/32
+set interfaces lo0.85 family inet6 address 2001:164:85::1/128
+set routing-instances CE-85 instance-type virtual-router
+set routing-instances CE-85 interface lo0.85
+set routing-instances CE-85 interface ge-0/0/3.85
+set routing-instances CE-85 routing-options autonomous-system 1085 independent-domain
+set routing-instances CE-85 routing-options static route 100.64.85.0/24 discard
+set routing-instances CE-85 routing-options rib CE-85.inet6.0 static route 2001:164:85::/48 discard
+set routing-instances CE-85 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.150 family inet
+set routing-instances CE-85 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::96 family inet6
+set routing-instances CE-85 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.86 vlan-id 86 family inet address 172.20.3.153/31
+set interfaces ge-0/0/3.86 vlan-id 86 family inet6 address 2001:200:20:3::99/127
+set interfaces lo0.86 family inet address 100.64.86.1/32
+set interfaces lo0.86 family inet6 address 2001:164:86::1/128
+set routing-instances CE-86 instance-type virtual-router
+set routing-instances CE-86 interface lo0.86
+set routing-instances CE-86 interface ge-0/0/3.86
+set routing-instances CE-86 routing-options autonomous-system 1086 independent-domain
+set routing-instances CE-86 routing-options static route 100.64.86.0/24 discard
+set routing-instances CE-86 routing-options rib CE-86.inet6.0 static route 2001:164:86::/48 discard
+set routing-instances CE-86 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.152 family inet
+set routing-instances CE-86 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::98 family inet6
+set routing-instances CE-86 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.87 vlan-id 87 family inet address 172.20.3.155/31
+set interfaces ge-0/0/3.87 vlan-id 87 family inet6 address 2001:200:20:3::9b/127
+set interfaces lo0.87 family inet address 100.64.87.1/32
+set interfaces lo0.87 family inet6 address 2001:164:87::1/128
+set routing-instances CE-87 instance-type virtual-router
+set routing-instances CE-87 interface lo0.87
+set routing-instances CE-87 interface ge-0/0/3.87
+set routing-instances CE-87 routing-options autonomous-system 1087 independent-domain
+set routing-instances CE-87 routing-options static route 100.64.87.0/24 discard
+set routing-instances CE-87 routing-options rib CE-87.inet6.0 static route 2001:164:87::/48 discard
+set routing-instances CE-87 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.154 family inet
+set routing-instances CE-87 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::9a family inet6
+set routing-instances CE-87 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.88 vlan-id 88 family inet address 172.20.3.157/31
+set interfaces ge-0/0/3.88 vlan-id 88 family inet6 address 2001:200:20:3::9d/127
+set interfaces lo0.88 family inet address 100.64.88.1/32
+set interfaces lo0.88 family inet6 address 2001:164:88::1/128
+set routing-instances CE-88 instance-type virtual-router
+set routing-instances CE-88 interface lo0.88
+set routing-instances CE-88 interface ge-0/0/3.88
+set routing-instances CE-88 routing-options autonomous-system 1088 independent-domain
+set routing-instances CE-88 routing-options static route 100.64.88.0/24 discard
+set routing-instances CE-88 routing-options rib CE-88.inet6.0 static route 2001:164:88::/48 discard
+set routing-instances CE-88 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.156 family inet
+set routing-instances CE-88 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::9c family inet6
+set routing-instances CE-88 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.89 vlan-id 89 family inet address 172.20.3.159/31
+set interfaces ge-0/0/3.89 vlan-id 89 family inet6 address 2001:200:20:3::9f/127
+set interfaces lo0.89 family inet address 100.64.89.1/32
+set interfaces lo0.89 family inet6 address 2001:164:89::1/128
+set routing-instances CE-89 instance-type virtual-router
+set routing-instances CE-89 interface lo0.89
+set routing-instances CE-89 interface ge-0/0/3.89
+set routing-instances CE-89 routing-options autonomous-system 1089 independent-domain
+set routing-instances CE-89 routing-options static route 100.64.89.0/24 discard
+set routing-instances CE-89 routing-options rib CE-89.inet6.0 static route 2001:164:89::/48 discard
+set routing-instances CE-89 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.158 family inet
+set routing-instances CE-89 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::9e family inet6
+set routing-instances CE-89 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.90 vlan-id 90 family inet address 172.20.3.161/31
+set interfaces ge-0/0/3.90 vlan-id 90 family inet6 address 2001:200:20:3::a1/127
+set interfaces lo0.90 family inet address 100.64.90.1/32
+set interfaces lo0.90 family inet6 address 2001:164:90::1/128
+set routing-instances CE-90 instance-type virtual-router
+set routing-instances CE-90 interface lo0.90
+set routing-instances CE-90 interface ge-0/0/3.90
+set routing-instances CE-90 routing-options autonomous-system 1090 independent-domain
+set routing-instances CE-90 routing-options static route 100.64.90.0/24 discard
+set routing-instances CE-90 routing-options rib CE-90.inet6.0 static route 2001:164:90::/48 discard
+set routing-instances CE-90 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.160 family inet
+set routing-instances CE-90 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::a0 family inet6
+set routing-instances CE-90 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.91 vlan-id 91 family inet address 172.20.3.163/31
+set interfaces ge-0/0/3.91 vlan-id 91 family inet6 address 2001:200:20:3::a3/127
+set interfaces lo0.91 family inet address 100.64.91.1/32
+set interfaces lo0.91 family inet6 address 2001:164:91::1/128
+set routing-instances CE-91 instance-type virtual-router
+set routing-instances CE-91 interface lo0.91
+set routing-instances CE-91 interface ge-0/0/3.91
+set routing-instances CE-91 routing-options autonomous-system 1091 independent-domain
+set routing-instances CE-91 routing-options static route 100.64.91.0/24 discard
+set routing-instances CE-91 routing-options rib CE-91.inet6.0 static route 2001:164:91::/48 discard
+set routing-instances CE-91 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.162 family inet
+set routing-instances CE-91 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::a2 family inet6
+set routing-instances CE-91 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.92 vlan-id 92 family inet address 172.20.3.165/31
+set interfaces ge-0/0/3.92 vlan-id 92 family inet6 address 2001:200:20:3::a5/127
+set interfaces lo0.92 family inet address 100.64.92.1/32
+set interfaces lo0.92 family inet6 address 2001:164:92::1/128
+set routing-instances CE-92 instance-type virtual-router
+set routing-instances CE-92 interface lo0.92
+set routing-instances CE-92 interface ge-0/0/3.92
+set routing-instances CE-92 routing-options autonomous-system 1092 independent-domain
+set routing-instances CE-92 routing-options static route 100.64.92.0/24 discard
+set routing-instances CE-92 routing-options rib CE-92.inet6.0 static route 2001:164:92::/48 discard
+set routing-instances CE-92 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.164 family inet
+set routing-instances CE-92 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::a4 family inet6
+set routing-instances CE-92 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.93 vlan-id 93 family inet address 172.20.3.167/31
+set interfaces ge-0/0/3.93 vlan-id 93 family inet6 address 2001:200:20:3::a7/127
+set interfaces lo0.93 family inet address 100.64.93.1/32
+set interfaces lo0.93 family inet6 address 2001:164:93::1/128
+set routing-instances CE-93 instance-type virtual-router
+set routing-instances CE-93 interface lo0.93
+set routing-instances CE-93 interface ge-0/0/3.93
+set routing-instances CE-93 routing-options autonomous-system 1093 independent-domain
+set routing-instances CE-93 routing-options static route 100.64.93.0/24 discard
+set routing-instances CE-93 routing-options rib CE-93.inet6.0 static route 2001:164:93::/48 discard
+set routing-instances CE-93 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.166 family inet
+set routing-instances CE-93 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::a6 family inet6
+set routing-instances CE-93 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.94 vlan-id 94 family inet address 172.20.3.169/31
+set interfaces ge-0/0/3.94 vlan-id 94 family inet6 address 2001:200:20:3::a9/127
+set interfaces lo0.94 family inet address 100.64.94.1/32
+set interfaces lo0.94 family inet6 address 2001:164:94::1/128
+set routing-instances CE-94 instance-type virtual-router
+set routing-instances CE-94 interface lo0.94
+set routing-instances CE-94 interface ge-0/0/3.94
+set routing-instances CE-94 routing-options autonomous-system 1094 independent-domain
+set routing-instances CE-94 routing-options static route 100.64.94.0/24 discard
+set routing-instances CE-94 routing-options rib CE-94.inet6.0 static route 2001:164:94::/48 discard
+set routing-instances CE-94 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.168 family inet
+set routing-instances CE-94 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::a8 family inet6
+set routing-instances CE-94 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.95 vlan-id 95 family inet address 172.20.3.171/31
+set interfaces ge-0/0/3.95 vlan-id 95 family inet6 address 2001:200:20:3::ab/127
+set interfaces lo0.95 family inet address 100.64.95.1/32
+set interfaces lo0.95 family inet6 address 2001:164:95::1/128
+set routing-instances CE-95 instance-type virtual-router
+set routing-instances CE-95 interface lo0.95
+set routing-instances CE-95 interface ge-0/0/3.95
+set routing-instances CE-95 routing-options autonomous-system 1095 independent-domain
+set routing-instances CE-95 routing-options static route 100.64.95.0/24 discard
+set routing-instances CE-95 routing-options rib CE-95.inet6.0 static route 2001:164:95::/48 discard
+set routing-instances CE-95 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.170 family inet
+set routing-instances CE-95 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::aa family inet6
+set routing-instances CE-95 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.96 vlan-id 96 family inet address 172.20.3.173/31
+set interfaces ge-0/0/3.96 vlan-id 96 family inet6 address 2001:200:20:3::ad/127
+set interfaces lo0.96 family inet address 100.64.96.1/32
+set interfaces lo0.96 family inet6 address 2001:164:96::1/128
+set routing-instances CE-96 instance-type virtual-router
+set routing-instances CE-96 interface lo0.96
+set routing-instances CE-96 interface ge-0/0/3.96
+set routing-instances CE-96 routing-options autonomous-system 1096 independent-domain
+set routing-instances CE-96 routing-options static route 100.64.96.0/24 discard
+set routing-instances CE-96 routing-options rib CE-96.inet6.0 static route 2001:164:96::/48 discard
+set routing-instances CE-96 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.172 family inet
+set routing-instances CE-96 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::ac family inet6
+set routing-instances CE-96 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.97 vlan-id 97 family inet address 172.20.3.175/31
+set interfaces ge-0/0/3.97 vlan-id 97 family inet6 address 2001:200:20:3::af/127
+set interfaces lo0.97 family inet address 100.64.97.1/32
+set interfaces lo0.97 family inet6 address 2001:164:97::1/128
+set routing-instances CE-97 instance-type virtual-router
+set routing-instances CE-97 interface lo0.97
+set routing-instances CE-97 interface ge-0/0/3.97
+set routing-instances CE-97 routing-options autonomous-system 1097 independent-domain
+set routing-instances CE-97 routing-options static route 100.64.97.0/24 discard
+set routing-instances CE-97 routing-options rib CE-97.inet6.0 static route 2001:164:97::/48 discard
+set routing-instances CE-97 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.174 family inet
+set routing-instances CE-97 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::ae family inet6
+set routing-instances CE-97 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.98 vlan-id 98 family inet address 172.20.3.177/31
+set interfaces ge-0/0/3.98 vlan-id 98 family inet6 address 2001:200:20:3::b1/127
+set interfaces lo0.98 family inet address 100.64.98.1/32
+set interfaces lo0.98 family inet6 address 2001:164:98::1/128
+set routing-instances CE-98 instance-type virtual-router
+set routing-instances CE-98 interface lo0.98
+set routing-instances CE-98 interface ge-0/0/3.98
+set routing-instances CE-98 routing-options autonomous-system 1098 independent-domain
+set routing-instances CE-98 routing-options static route 100.64.98.0/24 discard
+set routing-instances CE-98 routing-options rib CE-98.inet6.0 static route 2001:164:98::/48 discard
+set routing-instances CE-98 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.176 family inet
+set routing-instances CE-98 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::b0 family inet6
+set routing-instances CE-98 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.99 vlan-id 99 family inet address 172.20.3.179/31
+set interfaces ge-0/0/3.99 vlan-id 99 family inet6 address 2001:200:20:3::b3/127
+set interfaces lo0.99 family inet address 100.64.99.1/32
+set interfaces lo0.99 family inet6 address 2001:164:99::1/128
+set routing-instances CE-99 instance-type virtual-router
+set routing-instances CE-99 interface lo0.99
+set routing-instances CE-99 interface ge-0/0/3.99
+set routing-instances CE-99 routing-options autonomous-system 1099 independent-domain
+set routing-instances CE-99 routing-options static route 100.64.99.0/24 discard
+set routing-instances CE-99 routing-options rib CE-99.inet6.0 static route 2001:164:99::/48 discard
+set routing-instances CE-99 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.178 family inet
+set routing-instances CE-99 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::b2 family inet6
+set routing-instances CE-99 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.100 vlan-id 100 family inet address 172.20.3.181/31
+set interfaces ge-0/0/3.100 vlan-id 100 family inet6 address 2001:200:20:3::b5/127
+set interfaces lo0.100 family inet address 100.64.100.1/32
+set interfaces lo0.100 family inet6 address 2001:164:100::1/128
+set routing-instances CE-100 instance-type virtual-router
+set routing-instances CE-100 interface lo0.100
+set routing-instances CE-100 interface ge-0/0/3.100
+set routing-instances CE-100 routing-options autonomous-system 10100 independent-domain
+set routing-instances CE-100 routing-options static route 100.64.100.0/24 discard
+set routing-instances CE-100 routing-options rib CE-100.inet6.0 static route 2001:164:100::/48 discard
+set routing-instances CE-100 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.180 family inet
+set routing-instances CE-100 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::b4 family inet6
+set routing-instances CE-100 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.101 vlan-id 101 family inet address 172.20.3.183/31
+set interfaces ge-0/0/3.101 vlan-id 101 family inet6 address 2001:200:20:3::b7/127
+set interfaces lo0.101 family inet address 100.64.101.1/32
+set interfaces lo0.101 family inet6 address 2001:164:101::1/128
+set routing-instances CE-101 instance-type virtual-router
+set routing-instances CE-101 interface lo0.101
+set routing-instances CE-101 interface ge-0/0/3.101
+set routing-instances CE-101 routing-options autonomous-system 10101 independent-domain
+set routing-instances CE-101 routing-options static route 100.64.101.0/24 discard
+set routing-instances CE-101 routing-options rib CE-101.inet6.0 static route 2001:164:101::/48 discard
+set routing-instances CE-101 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.182 family inet
+set routing-instances CE-101 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::b6 family inet6
+set routing-instances CE-101 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.102 vlan-id 102 family inet address 172.20.3.185/31
+set interfaces ge-0/0/3.102 vlan-id 102 family inet6 address 2001:200:20:3::b9/127
+set interfaces lo0.102 family inet address 100.64.102.1/32
+set interfaces lo0.102 family inet6 address 2001:164:102::1/128
+set routing-instances CE-102 instance-type virtual-router
+set routing-instances CE-102 interface lo0.102
+set routing-instances CE-102 interface ge-0/0/3.102
+set routing-instances CE-102 routing-options autonomous-system 10102 independent-domain
+set routing-instances CE-102 routing-options static route 100.64.102.0/24 discard
+set routing-instances CE-102 routing-options rib CE-102.inet6.0 static route 2001:164:102::/48 discard
+set routing-instances CE-102 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.184 family inet
+set routing-instances CE-102 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::b8 family inet6
+set routing-instances CE-102 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.103 vlan-id 103 family inet address 172.20.3.187/31
+set interfaces ge-0/0/3.103 vlan-id 103 family inet6 address 2001:200:20:3::bb/127
+set interfaces lo0.103 family inet address 100.64.103.1/32
+set interfaces lo0.103 family inet6 address 2001:164:103::1/128
+set routing-instances CE-103 instance-type virtual-router
+set routing-instances CE-103 interface lo0.103
+set routing-instances CE-103 interface ge-0/0/3.103
+set routing-instances CE-103 routing-options autonomous-system 10103 independent-domain
+set routing-instances CE-103 routing-options static route 100.64.103.0/24 discard
+set routing-instances CE-103 routing-options rib CE-103.inet6.0 static route 2001:164:103::/48 discard
+set routing-instances CE-103 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.186 family inet
+set routing-instances CE-103 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::ba family inet6
+set routing-instances CE-103 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.104 vlan-id 104 family inet address 172.20.3.189/31
+set interfaces ge-0/0/3.104 vlan-id 104 family inet6 address 2001:200:20:3::bd/127
+set interfaces lo0.104 family inet address 100.64.104.1/32
+set interfaces lo0.104 family inet6 address 2001:164:104::1/128
+set routing-instances CE-104 instance-type virtual-router
+set routing-instances CE-104 interface lo0.104
+set routing-instances CE-104 interface ge-0/0/3.104
+set routing-instances CE-104 routing-options autonomous-system 10104 independent-domain
+set routing-instances CE-104 routing-options static route 100.64.104.0/24 discard
+set routing-instances CE-104 routing-options rib CE-104.inet6.0 static route 2001:164:104::/48 discard
+set routing-instances CE-104 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.188 family inet
+set routing-instances CE-104 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::bc family inet6
+set routing-instances CE-104 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.105 vlan-id 105 family inet address 172.20.3.191/31
+set interfaces ge-0/0/3.105 vlan-id 105 family inet6 address 2001:200:20:3::bf/127
+set interfaces lo0.105 family inet address 100.64.105.1/32
+set interfaces lo0.105 family inet6 address 2001:164:105::1/128
+set routing-instances CE-105 instance-type virtual-router
+set routing-instances CE-105 interface lo0.105
+set routing-instances CE-105 interface ge-0/0/3.105
+set routing-instances CE-105 routing-options autonomous-system 10105 independent-domain
+set routing-instances CE-105 routing-options static route 100.64.105.0/24 discard
+set routing-instances CE-105 routing-options rib CE-105.inet6.0 static route 2001:164:105::/48 discard
+set routing-instances CE-105 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.190 family inet
+set routing-instances CE-105 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::be family inet6
+set routing-instances CE-105 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.106 vlan-id 106 family inet address 172.20.3.193/31
+set interfaces ge-0/0/3.106 vlan-id 106 family inet6 address 2001:200:20:3::c1/127
+set interfaces lo0.106 family inet address 100.64.106.1/32
+set interfaces lo0.106 family inet6 address 2001:164:106::1/128
+set routing-instances CE-106 instance-type virtual-router
+set routing-instances CE-106 interface lo0.106
+set routing-instances CE-106 interface ge-0/0/3.106
+set routing-instances CE-106 routing-options autonomous-system 10106 independent-domain
+set routing-instances CE-106 routing-options static route 100.64.106.0/24 discard
+set routing-instances CE-106 routing-options rib CE-106.inet6.0 static route 2001:164:106::/48 discard
+set routing-instances CE-106 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.192 family inet
+set routing-instances CE-106 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::c0 family inet6
+set routing-instances CE-106 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.107 vlan-id 107 family inet address 172.20.3.195/31
+set interfaces ge-0/0/3.107 vlan-id 107 family inet6 address 2001:200:20:3::c3/127
+set interfaces lo0.107 family inet address 100.64.107.1/32
+set interfaces lo0.107 family inet6 address 2001:164:107::1/128
+set routing-instances CE-107 instance-type virtual-router
+set routing-instances CE-107 interface lo0.107
+set routing-instances CE-107 interface ge-0/0/3.107
+set routing-instances CE-107 routing-options autonomous-system 10107 independent-domain
+set routing-instances CE-107 routing-options static route 100.64.107.0/24 discard
+set routing-instances CE-107 routing-options rib CE-107.inet6.0 static route 2001:164:107::/48 discard
+set routing-instances CE-107 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.194 family inet
+set routing-instances CE-107 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::c2 family inet6
+set routing-instances CE-107 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.108 vlan-id 108 family inet address 172.20.3.197/31
+set interfaces ge-0/0/3.108 vlan-id 108 family inet6 address 2001:200:20:3::c5/127
+set interfaces lo0.108 family inet address 100.64.108.1/32
+set interfaces lo0.108 family inet6 address 2001:164:108::1/128
+set routing-instances CE-108 instance-type virtual-router
+set routing-instances CE-108 interface lo0.108
+set routing-instances CE-108 interface ge-0/0/3.108
+set routing-instances CE-108 routing-options autonomous-system 10108 independent-domain
+set routing-instances CE-108 routing-options static route 100.64.108.0/24 discard
+set routing-instances CE-108 routing-options rib CE-108.inet6.0 static route 2001:164:108::/48 discard
+set routing-instances CE-108 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.196 family inet
+set routing-instances CE-108 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::c4 family inet6
+set routing-instances CE-108 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.109 vlan-id 109 family inet address 172.20.3.199/31
+set interfaces ge-0/0/3.109 vlan-id 109 family inet6 address 2001:200:20:3::c7/127
+set interfaces lo0.109 family inet address 100.64.109.1/32
+set interfaces lo0.109 family inet6 address 2001:164:109::1/128
+set routing-instances CE-109 instance-type virtual-router
+set routing-instances CE-109 interface lo0.109
+set routing-instances CE-109 interface ge-0/0/3.109
+set routing-instances CE-109 routing-options autonomous-system 10109 independent-domain
+set routing-instances CE-109 routing-options static route 100.64.109.0/24 discard
+set routing-instances CE-109 routing-options rib CE-109.inet6.0 static route 2001:164:109::/48 discard
+set routing-instances CE-109 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.198 family inet
+set routing-instances CE-109 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::c6 family inet6
+set routing-instances CE-109 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.110 vlan-id 110 family inet address 172.20.3.201/31
+set interfaces ge-0/0/3.110 vlan-id 110 family inet6 address 2001:200:20:3::c9/127
+set interfaces lo0.110 family inet address 100.64.110.1/32
+set interfaces lo0.110 family inet6 address 2001:164:110::1/128
+set routing-instances CE-110 instance-type virtual-router
+set routing-instances CE-110 interface lo0.110
+set routing-instances CE-110 interface ge-0/0/3.110
+set routing-instances CE-110 routing-options autonomous-system 10110 independent-domain
+set routing-instances CE-110 routing-options static route 100.64.110.0/24 discard
+set routing-instances CE-110 routing-options rib CE-110.inet6.0 static route 2001:164:110::/48 discard
+set routing-instances CE-110 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.200 family inet
+set routing-instances CE-110 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::c8 family inet6
+set routing-instances CE-110 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.111 vlan-id 111 family inet address 172.20.3.203/31
+set interfaces ge-0/0/3.111 vlan-id 111 family inet6 address 2001:200:20:3::cb/127
+set interfaces lo0.111 family inet address 100.64.111.1/32
+set interfaces lo0.111 family inet6 address 2001:164:111::1/128
+set routing-instances CE-111 instance-type virtual-router
+set routing-instances CE-111 interface lo0.111
+set routing-instances CE-111 interface ge-0/0/3.111
+set routing-instances CE-111 routing-options autonomous-system 10111 independent-domain
+set routing-instances CE-111 routing-options static route 100.64.111.0/24 discard
+set routing-instances CE-111 routing-options rib CE-111.inet6.0 static route 2001:164:111::/48 discard
+set routing-instances CE-111 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.202 family inet
+set routing-instances CE-111 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::ca family inet6
+set routing-instances CE-111 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.112 vlan-id 112 family inet address 172.20.3.205/31
+set interfaces ge-0/0/3.112 vlan-id 112 family inet6 address 2001:200:20:3::cd/127
+set interfaces lo0.112 family inet address 100.64.112.1/32
+set interfaces lo0.112 family inet6 address 2001:164:112::1/128
+set routing-instances CE-112 instance-type virtual-router
+set routing-instances CE-112 interface lo0.112
+set routing-instances CE-112 interface ge-0/0/3.112
+set routing-instances CE-112 routing-options autonomous-system 10112 independent-domain
+set routing-instances CE-112 routing-options static route 100.64.112.0/24 discard
+set routing-instances CE-112 routing-options rib CE-112.inet6.0 static route 2001:164:112::/48 discard
+set routing-instances CE-112 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.204 family inet
+set routing-instances CE-112 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::cc family inet6
+set routing-instances CE-112 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.113 vlan-id 113 family inet address 172.20.3.207/31
+set interfaces ge-0/0/3.113 vlan-id 113 family inet6 address 2001:200:20:3::cf/127
+set interfaces lo0.113 family inet address 100.64.113.1/32
+set interfaces lo0.113 family inet6 address 2001:164:113::1/128
+set routing-instances CE-113 instance-type virtual-router
+set routing-instances CE-113 interface lo0.113
+set routing-instances CE-113 interface ge-0/0/3.113
+set routing-instances CE-113 routing-options autonomous-system 10113 independent-domain
+set routing-instances CE-113 routing-options static route 100.64.113.0/24 discard
+set routing-instances CE-113 routing-options rib CE-113.inet6.0 static route 2001:164:113::/48 discard
+set routing-instances CE-113 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.206 family inet
+set routing-instances CE-113 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::ce family inet6
+set routing-instances CE-113 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.114 vlan-id 114 family inet address 172.20.3.209/31
+set interfaces ge-0/0/3.114 vlan-id 114 family inet6 address 2001:200:20:3::d1/127
+set interfaces lo0.114 family inet address 100.64.114.1/32
+set interfaces lo0.114 family inet6 address 2001:164:114::1/128
+set routing-instances CE-114 instance-type virtual-router
+set routing-instances CE-114 interface lo0.114
+set routing-instances CE-114 interface ge-0/0/3.114
+set routing-instances CE-114 routing-options autonomous-system 10114 independent-domain
+set routing-instances CE-114 routing-options static route 100.64.114.0/24 discard
+set routing-instances CE-114 routing-options rib CE-114.inet6.0 static route 2001:164:114::/48 discard
+set routing-instances CE-114 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.208 family inet
+set routing-instances CE-114 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::d0 family inet6
+set routing-instances CE-114 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.115 vlan-id 115 family inet address 172.20.3.211/31
+set interfaces ge-0/0/3.115 vlan-id 115 family inet6 address 2001:200:20:3::d3/127
+set interfaces lo0.115 family inet address 100.64.115.1/32
+set interfaces lo0.115 family inet6 address 2001:164:115::1/128
+set routing-instances CE-115 instance-type virtual-router
+set routing-instances CE-115 interface lo0.115
+set routing-instances CE-115 interface ge-0/0/3.115
+set routing-instances CE-115 routing-options autonomous-system 10115 independent-domain
+set routing-instances CE-115 routing-options static route 100.64.115.0/24 discard
+set routing-instances CE-115 routing-options rib CE-115.inet6.0 static route 2001:164:115::/48 discard
+set routing-instances CE-115 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.210 family inet
+set routing-instances CE-115 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::d2 family inet6
+set routing-instances CE-115 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.116 vlan-id 116 family inet address 172.20.3.213/31
+set interfaces ge-0/0/3.116 vlan-id 116 family inet6 address 2001:200:20:3::d5/127
+set interfaces lo0.116 family inet address 100.64.116.1/32
+set interfaces lo0.116 family inet6 address 2001:164:116::1/128
+set routing-instances CE-116 instance-type virtual-router
+set routing-instances CE-116 interface lo0.116
+set routing-instances CE-116 interface ge-0/0/3.116
+set routing-instances CE-116 routing-options autonomous-system 10116 independent-domain
+set routing-instances CE-116 routing-options static route 100.64.116.0/24 discard
+set routing-instances CE-116 routing-options rib CE-116.inet6.0 static route 2001:164:116::/48 discard
+set routing-instances CE-116 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.212 family inet
+set routing-instances CE-116 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::d4 family inet6
+set routing-instances CE-116 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.117 vlan-id 117 family inet address 172.20.3.215/31
+set interfaces ge-0/0/3.117 vlan-id 117 family inet6 address 2001:200:20:3::d7/127
+set interfaces lo0.117 family inet address 100.64.117.1/32
+set interfaces lo0.117 family inet6 address 2001:164:117::1/128
+set routing-instances CE-117 instance-type virtual-router
+set routing-instances CE-117 interface lo0.117
+set routing-instances CE-117 interface ge-0/0/3.117
+set routing-instances CE-117 routing-options autonomous-system 10117 independent-domain
+set routing-instances CE-117 routing-options static route 100.64.117.0/24 discard
+set routing-instances CE-117 routing-options rib CE-117.inet6.0 static route 2001:164:117::/48 discard
+set routing-instances CE-117 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.214 family inet
+set routing-instances CE-117 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::d6 family inet6
+set routing-instances CE-117 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.118 vlan-id 118 family inet address 172.20.3.217/31
+set interfaces ge-0/0/3.118 vlan-id 118 family inet6 address 2001:200:20:3::d9/127
+set interfaces lo0.118 family inet address 100.64.118.1/32
+set interfaces lo0.118 family inet6 address 2001:164:118::1/128
+set routing-instances CE-118 instance-type virtual-router
+set routing-instances CE-118 interface lo0.118
+set routing-instances CE-118 interface ge-0/0/3.118
+set routing-instances CE-118 routing-options autonomous-system 10118 independent-domain
+set routing-instances CE-118 routing-options static route 100.64.118.0/24 discard
+set routing-instances CE-118 routing-options rib CE-118.inet6.0 static route 2001:164:118::/48 discard
+set routing-instances CE-118 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.216 family inet
+set routing-instances CE-118 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::d8 family inet6
+set routing-instances CE-118 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.119 vlan-id 119 family inet address 172.20.3.219/31
+set interfaces ge-0/0/3.119 vlan-id 119 family inet6 address 2001:200:20:3::db/127
+set interfaces lo0.119 family inet address 100.64.119.1/32
+set interfaces lo0.119 family inet6 address 2001:164:119::1/128
+set routing-instances CE-119 instance-type virtual-router
+set routing-instances CE-119 interface lo0.119
+set routing-instances CE-119 interface ge-0/0/3.119
+set routing-instances CE-119 routing-options autonomous-system 10119 independent-domain
+set routing-instances CE-119 routing-options static route 100.64.119.0/24 discard
+set routing-instances CE-119 routing-options rib CE-119.inet6.0 static route 2001:164:119::/48 discard
+set routing-instances CE-119 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.218 family inet
+set routing-instances CE-119 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::da family inet6
+set routing-instances CE-119 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.120 vlan-id 120 family inet address 172.20.3.221/31
+set interfaces ge-0/0/3.120 vlan-id 120 family inet6 address 2001:200:20:3::dd/127
+set interfaces lo0.120 family inet address 100.64.120.1/32
+set interfaces lo0.120 family inet6 address 2001:164:120::1/128
+set routing-instances CE-120 instance-type virtual-router
+set routing-instances CE-120 interface lo0.120
+set routing-instances CE-120 interface ge-0/0/3.120
+set routing-instances CE-120 routing-options autonomous-system 10120 independent-domain
+set routing-instances CE-120 routing-options static route 100.64.120.0/24 discard
+set routing-instances CE-120 routing-options rib CE-120.inet6.0 static route 2001:164:120::/48 discard
+set routing-instances CE-120 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.220 family inet
+set routing-instances CE-120 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::dc family inet6
+set routing-instances CE-120 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.121 vlan-id 121 family inet address 172.20.3.223/31
+set interfaces ge-0/0/3.121 vlan-id 121 family inet6 address 2001:200:20:3::df/127
+set interfaces lo0.121 family inet address 100.64.121.1/32
+set interfaces lo0.121 family inet6 address 2001:164:121::1/128
+set routing-instances CE-121 instance-type virtual-router
+set routing-instances CE-121 interface lo0.121
+set routing-instances CE-121 interface ge-0/0/3.121
+set routing-instances CE-121 routing-options autonomous-system 10121 independent-domain
+set routing-instances CE-121 routing-options static route 100.64.121.0/24 discard
+set routing-instances CE-121 routing-options rib CE-121.inet6.0 static route 2001:164:121::/48 discard
+set routing-instances CE-121 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.222 family inet
+set routing-instances CE-121 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::de family inet6
+set routing-instances CE-121 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.122 vlan-id 122 family inet address 172.20.3.225/31
+set interfaces ge-0/0/3.122 vlan-id 122 family inet6 address 2001:200:20:3::e1/127
+set interfaces lo0.122 family inet address 100.64.122.1/32
+set interfaces lo0.122 family inet6 address 2001:164:122::1/128
+set routing-instances CE-122 instance-type virtual-router
+set routing-instances CE-122 interface lo0.122
+set routing-instances CE-122 interface ge-0/0/3.122
+set routing-instances CE-122 routing-options autonomous-system 10122 independent-domain
+set routing-instances CE-122 routing-options static route 100.64.122.0/24 discard
+set routing-instances CE-122 routing-options rib CE-122.inet6.0 static route 2001:164:122::/48 discard
+set routing-instances CE-122 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.224 family inet
+set routing-instances CE-122 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::e0 family inet6
+set routing-instances CE-122 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.123 vlan-id 123 family inet address 172.20.3.227/31
+set interfaces ge-0/0/3.123 vlan-id 123 family inet6 address 2001:200:20:3::e3/127
+set interfaces lo0.123 family inet address 100.64.123.1/32
+set interfaces lo0.123 family inet6 address 2001:164:123::1/128
+set routing-instances CE-123 instance-type virtual-router
+set routing-instances CE-123 interface lo0.123
+set routing-instances CE-123 interface ge-0/0/3.123
+set routing-instances CE-123 routing-options autonomous-system 10123 independent-domain
+set routing-instances CE-123 routing-options static route 100.64.123.0/24 discard
+set routing-instances CE-123 routing-options rib CE-123.inet6.0 static route 2001:164:123::/48 discard
+set routing-instances CE-123 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.226 family inet
+set routing-instances CE-123 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::e2 family inet6
+set routing-instances CE-123 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.124 vlan-id 124 family inet address 172.20.3.229/31
+set interfaces ge-0/0/3.124 vlan-id 124 family inet6 address 2001:200:20:3::e5/127
+set interfaces lo0.124 family inet address 100.64.124.1/32
+set interfaces lo0.124 family inet6 address 2001:164:124::1/128
+set routing-instances CE-124 instance-type virtual-router
+set routing-instances CE-124 interface lo0.124
+set routing-instances CE-124 interface ge-0/0/3.124
+set routing-instances CE-124 routing-options autonomous-system 10124 independent-domain
+set routing-instances CE-124 routing-options static route 100.64.124.0/24 discard
+set routing-instances CE-124 routing-options rib CE-124.inet6.0 static route 2001:164:124::/48 discard
+set routing-instances CE-124 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.228 family inet
+set routing-instances CE-124 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::e4 family inet6
+set routing-instances CE-124 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.125 vlan-id 125 family inet address 172.20.3.231/31
+set interfaces ge-0/0/3.125 vlan-id 125 family inet6 address 2001:200:20:3::e7/127
+set interfaces lo0.125 family inet address 100.64.125.1/32
+set interfaces lo0.125 family inet6 address 2001:164:125::1/128
+set routing-instances CE-125 instance-type virtual-router
+set routing-instances CE-125 interface lo0.125
+set routing-instances CE-125 interface ge-0/0/3.125
+set routing-instances CE-125 routing-options autonomous-system 10125 independent-domain
+set routing-instances CE-125 routing-options static route 100.64.125.0/24 discard
+set routing-instances CE-125 routing-options rib CE-125.inet6.0 static route 2001:164:125::/48 discard
+set routing-instances CE-125 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.230 family inet
+set routing-instances CE-125 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::e6 family inet6
+set routing-instances CE-125 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.126 vlan-id 126 family inet address 172.20.3.233/31
+set interfaces ge-0/0/3.126 vlan-id 126 family inet6 address 2001:200:20:3::e9/127
+set interfaces lo0.126 family inet address 100.64.126.1/32
+set interfaces lo0.126 family inet6 address 2001:164:126::1/128
+set routing-instances CE-126 instance-type virtual-router
+set routing-instances CE-126 interface lo0.126
+set routing-instances CE-126 interface ge-0/0/3.126
+set routing-instances CE-126 routing-options autonomous-system 10126 independent-domain
+set routing-instances CE-126 routing-options static route 100.64.126.0/24 discard
+set routing-instances CE-126 routing-options rib CE-126.inet6.0 static route 2001:164:126::/48 discard
+set routing-instances CE-126 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.232 family inet
+set routing-instances CE-126 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::e8 family inet6
+set routing-instances CE-126 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.127 vlan-id 127 family inet address 172.20.3.235/31
+set interfaces ge-0/0/3.127 vlan-id 127 family inet6 address 2001:200:20:3::eb/127
+set interfaces lo0.127 family inet address 100.64.127.1/32
+set interfaces lo0.127 family inet6 address 2001:164:127::1/128
+set routing-instances CE-127 instance-type virtual-router
+set routing-instances CE-127 interface lo0.127
+set routing-instances CE-127 interface ge-0/0/3.127
+set routing-instances CE-127 routing-options autonomous-system 10127 independent-domain
+set routing-instances CE-127 routing-options static route 100.64.127.0/24 discard
+set routing-instances CE-127 routing-options rib CE-127.inet6.0 static route 2001:164:127::/48 discard
+set routing-instances CE-127 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.234 family inet
+set routing-instances CE-127 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::ea family inet6
+set routing-instances CE-127 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.128 vlan-id 128 family inet address 172.20.3.237/31
+set interfaces ge-0/0/3.128 vlan-id 128 family inet6 address 2001:200:20:3::ed/127
+set interfaces lo0.128 family inet address 100.64.128.1/32
+set interfaces lo0.128 family inet6 address 2001:164:128::1/128
+set routing-instances CE-128 instance-type virtual-router
+set routing-instances CE-128 interface lo0.128
+set routing-instances CE-128 interface ge-0/0/3.128
+set routing-instances CE-128 routing-options autonomous-system 10128 independent-domain
+set routing-instances CE-128 routing-options static route 100.64.128.0/24 discard
+set routing-instances CE-128 routing-options rib CE-128.inet6.0 static route 2001:164:128::/48 discard
+set routing-instances CE-128 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.236 family inet
+set routing-instances CE-128 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::ec family inet6
+set routing-instances CE-128 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.129 vlan-id 129 family inet address 172.20.3.239/31
+set interfaces ge-0/0/3.129 vlan-id 129 family inet6 address 2001:200:20:3::ef/127
+set interfaces lo0.129 family inet address 100.64.129.1/32
+set interfaces lo0.129 family inet6 address 2001:164:129::1/128
+set routing-instances CE-129 instance-type virtual-router
+set routing-instances CE-129 interface lo0.129
+set routing-instances CE-129 interface ge-0/0/3.129
+set routing-instances CE-129 routing-options autonomous-system 10129 independent-domain
+set routing-instances CE-129 routing-options static route 100.64.129.0/24 discard
+set routing-instances CE-129 routing-options rib CE-129.inet6.0 static route 2001:164:129::/48 discard
+set routing-instances CE-129 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.238 family inet
+set routing-instances CE-129 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::ee family inet6
+set routing-instances CE-129 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.130 vlan-id 130 family inet address 172.20.3.241/31
+set interfaces ge-0/0/3.130 vlan-id 130 family inet6 address 2001:200:20:3::f1/127
+set interfaces lo0.130 family inet address 100.64.130.1/32
+set interfaces lo0.130 family inet6 address 2001:164:130::1/128
+set routing-instances CE-130 instance-type virtual-router
+set routing-instances CE-130 interface lo0.130
+set routing-instances CE-130 interface ge-0/0/3.130
+set routing-instances CE-130 routing-options autonomous-system 10130 independent-domain
+set routing-instances CE-130 routing-options static route 100.64.130.0/24 discard
+set routing-instances CE-130 routing-options rib CE-130.inet6.0 static route 2001:164:130::/48 discard
+set routing-instances CE-130 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.240 family inet
+set routing-instances CE-130 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::f0 family inet6
+set routing-instances CE-130 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.131 vlan-id 131 family inet address 172.20.3.243/31
+set interfaces ge-0/0/3.131 vlan-id 131 family inet6 address 2001:200:20:3::f3/127
+set interfaces lo0.131 family inet address 100.64.131.1/32
+set interfaces lo0.131 family inet6 address 2001:164:131::1/128
+set routing-instances CE-131 instance-type virtual-router
+set routing-instances CE-131 interface lo0.131
+set routing-instances CE-131 interface ge-0/0/3.131
+set routing-instances CE-131 routing-options autonomous-system 10131 independent-domain
+set routing-instances CE-131 routing-options static route 100.64.131.0/24 discard
+set routing-instances CE-131 routing-options rib CE-131.inet6.0 static route 2001:164:131::/48 discard
+set routing-instances CE-131 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.242 family inet
+set routing-instances CE-131 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::f2 family inet6
+set routing-instances CE-131 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.132 vlan-id 132 family inet address 172.20.3.245/31
+set interfaces ge-0/0/3.132 vlan-id 132 family inet6 address 2001:200:20:3::f5/127
+set interfaces lo0.132 family inet address 100.64.132.1/32
+set interfaces lo0.132 family inet6 address 2001:164:132::1/128
+set routing-instances CE-132 instance-type virtual-router
+set routing-instances CE-132 interface lo0.132
+set routing-instances CE-132 interface ge-0/0/3.132
+set routing-instances CE-132 routing-options autonomous-system 10132 independent-domain
+set routing-instances CE-132 routing-options static route 100.64.132.0/24 discard
+set routing-instances CE-132 routing-options rib CE-132.inet6.0 static route 2001:164:132::/48 discard
+set routing-instances CE-132 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.244 family inet
+set routing-instances CE-132 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::f4 family inet6
+set routing-instances CE-132 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.133 vlan-id 133 family inet address 172.20.3.247/31
+set interfaces ge-0/0/3.133 vlan-id 133 family inet6 address 2001:200:20:3::f7/127
+set interfaces lo0.133 family inet address 100.64.133.1/32
+set interfaces lo0.133 family inet6 address 2001:164:133::1/128
+set routing-instances CE-133 instance-type virtual-router
+set routing-instances CE-133 interface lo0.133
+set routing-instances CE-133 interface ge-0/0/3.133
+set routing-instances CE-133 routing-options autonomous-system 10133 independent-domain
+set routing-instances CE-133 routing-options static route 100.64.133.0/24 discard
+set routing-instances CE-133 routing-options rib CE-133.inet6.0 static route 2001:164:133::/48 discard
+set routing-instances CE-133 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.246 family inet
+set routing-instances CE-133 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::f6 family inet6
+set routing-instances CE-133 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.134 vlan-id 134 family inet address 172.20.3.249/31
+set interfaces ge-0/0/3.134 vlan-id 134 family inet6 address 2001:200:20:3::f9/127
+set interfaces lo0.134 family inet address 100.64.134.1/32
+set interfaces lo0.134 family inet6 address 2001:164:134::1/128
+set routing-instances CE-134 instance-type virtual-router
+set routing-instances CE-134 interface lo0.134
+set routing-instances CE-134 interface ge-0/0/3.134
+set routing-instances CE-134 routing-options autonomous-system 10134 independent-domain
+set routing-instances CE-134 routing-options static route 100.64.134.0/24 discard
+set routing-instances CE-134 routing-options rib CE-134.inet6.0 static route 2001:164:134::/48 discard
+set routing-instances CE-134 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.248 family inet
+set routing-instances CE-134 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::f8 family inet6
+set routing-instances CE-134 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.135 vlan-id 135 family inet address 172.20.3.251/31
+set interfaces ge-0/0/3.135 vlan-id 135 family inet6 address 2001:200:20:3::fb/127
+set interfaces lo0.135 family inet address 100.64.135.1/32
+set interfaces lo0.135 family inet6 address 2001:164:135::1/128
+set routing-instances CE-135 instance-type virtual-router
+set routing-instances CE-135 interface lo0.135
+set routing-instances CE-135 interface ge-0/0/3.135
+set routing-instances CE-135 routing-options autonomous-system 10135 independent-domain
+set routing-instances CE-135 routing-options static route 100.64.135.0/24 discard
+set routing-instances CE-135 routing-options rib CE-135.inet6.0 static route 2001:164:135::/48 discard
+set routing-instances CE-135 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.250 family inet
+set routing-instances CE-135 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::fa family inet6
+set routing-instances CE-135 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.136 vlan-id 136 family inet address 172.20.3.253/31
+set interfaces ge-0/0/3.136 vlan-id 136 family inet6 address 2001:200:20:3::fd/127
+set interfaces lo0.136 family inet address 100.64.136.1/32
+set interfaces lo0.136 family inet6 address 2001:164:136::1/128
+set routing-instances CE-136 instance-type virtual-router
+set routing-instances CE-136 interface lo0.136
+set routing-instances CE-136 interface ge-0/0/3.136
+set routing-instances CE-136 routing-options autonomous-system 10136 independent-domain
+set routing-instances CE-136 routing-options static route 100.64.136.0/24 discard
+set routing-instances CE-136 routing-options rib CE-136.inet6.0 static route 2001:164:136::/48 discard
+set routing-instances CE-136 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.252 family inet
+set routing-instances CE-136 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::fc family inet6
+set routing-instances CE-136 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.137 vlan-id 137 family inet address 172.20.3.255/31
+set interfaces ge-0/0/3.137 vlan-id 137 family inet6 address 2001:200:20:3::ff/127
+set interfaces lo0.137 family inet address 100.64.137.1/32
+set interfaces lo0.137 family inet6 address 2001:164:137::1/128
+set routing-instances CE-137 instance-type virtual-router
+set routing-instances CE-137 interface lo0.137
+set routing-instances CE-137 interface ge-0/0/3.137
+set routing-instances CE-137 routing-options autonomous-system 10137 independent-domain
+set routing-instances CE-137 routing-options static route 100.64.137.0/24 discard
+set routing-instances CE-137 routing-options rib CE-137.inet6.0 static route 2001:164:137::/48 discard
+set routing-instances CE-137 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.3.254 family inet
+set routing-instances CE-137 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::fe family inet6
+set routing-instances CE-137 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.138 vlan-id 138 family inet address 172.20.4.1/31
+set interfaces ge-0/0/3.138 vlan-id 138 family inet6 address 2001:200:20:3::101/127
+set interfaces lo0.138 family inet address 100.64.138.1/32
+set interfaces lo0.138 family inet6 address 2001:164:138::1/128
+set routing-instances CE-138 instance-type virtual-router
+set routing-instances CE-138 interface lo0.138
+set routing-instances CE-138 interface ge-0/0/3.138
+set routing-instances CE-138 routing-options autonomous-system 10138 independent-domain
+set routing-instances CE-138 routing-options static route 100.64.138.0/24 discard
+set routing-instances CE-138 routing-options rib CE-138.inet6.0 static route 2001:164:138::/48 discard
+set routing-instances CE-138 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.0 family inet
+set routing-instances CE-138 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::100 family inet6
+set routing-instances CE-138 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.139 vlan-id 139 family inet address 172.20.4.3/31
+set interfaces ge-0/0/3.139 vlan-id 139 family inet6 address 2001:200:20:3::103/127
+set interfaces lo0.139 family inet address 100.64.139.1/32
+set interfaces lo0.139 family inet6 address 2001:164:139::1/128
+set routing-instances CE-139 instance-type virtual-router
+set routing-instances CE-139 interface lo0.139
+set routing-instances CE-139 interface ge-0/0/3.139
+set routing-instances CE-139 routing-options autonomous-system 10139 independent-domain
+set routing-instances CE-139 routing-options static route 100.64.139.0/24 discard
+set routing-instances CE-139 routing-options rib CE-139.inet6.0 static route 2001:164:139::/48 discard
+set routing-instances CE-139 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.2 family inet
+set routing-instances CE-139 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::102 family inet6
+set routing-instances CE-139 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.140 vlan-id 140 family inet address 172.20.4.5/31
+set interfaces ge-0/0/3.140 vlan-id 140 family inet6 address 2001:200:20:3::105/127
+set interfaces lo0.140 family inet address 100.64.140.1/32
+set interfaces lo0.140 family inet6 address 2001:164:140::1/128
+set routing-instances CE-140 instance-type virtual-router
+set routing-instances CE-140 interface lo0.140
+set routing-instances CE-140 interface ge-0/0/3.140
+set routing-instances CE-140 routing-options autonomous-system 10140 independent-domain
+set routing-instances CE-140 routing-options static route 100.64.140.0/24 discard
+set routing-instances CE-140 routing-options rib CE-140.inet6.0 static route 2001:164:140::/48 discard
+set routing-instances CE-140 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.4 family inet
+set routing-instances CE-140 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::104 family inet6
+set routing-instances CE-140 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.141 vlan-id 141 family inet address 172.20.4.7/31
+set interfaces ge-0/0/3.141 vlan-id 141 family inet6 address 2001:200:20:3::107/127
+set interfaces lo0.141 family inet address 100.64.141.1/32
+set interfaces lo0.141 family inet6 address 2001:164:141::1/128
+set routing-instances CE-141 instance-type virtual-router
+set routing-instances CE-141 interface lo0.141
+set routing-instances CE-141 interface ge-0/0/3.141
+set routing-instances CE-141 routing-options autonomous-system 10141 independent-domain
+set routing-instances CE-141 routing-options static route 100.64.141.0/24 discard
+set routing-instances CE-141 routing-options rib CE-141.inet6.0 static route 2001:164:141::/48 discard
+set routing-instances CE-141 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.6 family inet
+set routing-instances CE-141 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::106 family inet6
+set routing-instances CE-141 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.142 vlan-id 142 family inet address 172.20.4.9/31
+set interfaces ge-0/0/3.142 vlan-id 142 family inet6 address 2001:200:20:3::109/127
+set interfaces lo0.142 family inet address 100.64.142.1/32
+set interfaces lo0.142 family inet6 address 2001:164:142::1/128
+set routing-instances CE-142 instance-type virtual-router
+set routing-instances CE-142 interface lo0.142
+set routing-instances CE-142 interface ge-0/0/3.142
+set routing-instances CE-142 routing-options autonomous-system 10142 independent-domain
+set routing-instances CE-142 routing-options static route 100.64.142.0/24 discard
+set routing-instances CE-142 routing-options rib CE-142.inet6.0 static route 2001:164:142::/48 discard
+set routing-instances CE-142 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.8 family inet
+set routing-instances CE-142 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::108 family inet6
+set routing-instances CE-142 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.143 vlan-id 143 family inet address 172.20.4.11/31
+set interfaces ge-0/0/3.143 vlan-id 143 family inet6 address 2001:200:20:3::10b/127
+set interfaces lo0.143 family inet address 100.64.143.1/32
+set interfaces lo0.143 family inet6 address 2001:164:143::1/128
+set routing-instances CE-143 instance-type virtual-router
+set routing-instances CE-143 interface lo0.143
+set routing-instances CE-143 interface ge-0/0/3.143
+set routing-instances CE-143 routing-options autonomous-system 10143 independent-domain
+set routing-instances CE-143 routing-options static route 100.64.143.0/24 discard
+set routing-instances CE-143 routing-options rib CE-143.inet6.0 static route 2001:164:143::/48 discard
+set routing-instances CE-143 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.10 family inet
+set routing-instances CE-143 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::10a family inet6
+set routing-instances CE-143 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.144 vlan-id 144 family inet address 172.20.4.13/31
+set interfaces ge-0/0/3.144 vlan-id 144 family inet6 address 2001:200:20:3::10d/127
+set interfaces lo0.144 family inet address 100.64.144.1/32
+set interfaces lo0.144 family inet6 address 2001:164:144::1/128
+set routing-instances CE-144 instance-type virtual-router
+set routing-instances CE-144 interface lo0.144
+set routing-instances CE-144 interface ge-0/0/3.144
+set routing-instances CE-144 routing-options autonomous-system 10144 independent-domain
+set routing-instances CE-144 routing-options static route 100.64.144.0/24 discard
+set routing-instances CE-144 routing-options rib CE-144.inet6.0 static route 2001:164:144::/48 discard
+set routing-instances CE-144 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.12 family inet
+set routing-instances CE-144 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::10c family inet6
+set routing-instances CE-144 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.145 vlan-id 145 family inet address 172.20.4.15/31
+set interfaces ge-0/0/3.145 vlan-id 145 family inet6 address 2001:200:20:3::10f/127
+set interfaces lo0.145 family inet address 100.64.145.1/32
+set interfaces lo0.145 family inet6 address 2001:164:145::1/128
+set routing-instances CE-145 instance-type virtual-router
+set routing-instances CE-145 interface lo0.145
+set routing-instances CE-145 interface ge-0/0/3.145
+set routing-instances CE-145 routing-options autonomous-system 10145 independent-domain
+set routing-instances CE-145 routing-options static route 100.64.145.0/24 discard
+set routing-instances CE-145 routing-options rib CE-145.inet6.0 static route 2001:164:145::/48 discard
+set routing-instances CE-145 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.14 family inet
+set routing-instances CE-145 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::10e family inet6
+set routing-instances CE-145 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.146 vlan-id 146 family inet address 172.20.4.17/31
+set interfaces ge-0/0/3.146 vlan-id 146 family inet6 address 2001:200:20:3::111/127
+set interfaces lo0.146 family inet address 100.64.146.1/32
+set interfaces lo0.146 family inet6 address 2001:164:146::1/128
+set routing-instances CE-146 instance-type virtual-router
+set routing-instances CE-146 interface lo0.146
+set routing-instances CE-146 interface ge-0/0/3.146
+set routing-instances CE-146 routing-options autonomous-system 10146 independent-domain
+set routing-instances CE-146 routing-options static route 100.64.146.0/24 discard
+set routing-instances CE-146 routing-options rib CE-146.inet6.0 static route 2001:164:146::/48 discard
+set routing-instances CE-146 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.16 family inet
+set routing-instances CE-146 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::110 family inet6
+set routing-instances CE-146 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.147 vlan-id 147 family inet address 172.20.4.19/31
+set interfaces ge-0/0/3.147 vlan-id 147 family inet6 address 2001:200:20:3::113/127
+set interfaces lo0.147 family inet address 100.64.147.1/32
+set interfaces lo0.147 family inet6 address 2001:164:147::1/128
+set routing-instances CE-147 instance-type virtual-router
+set routing-instances CE-147 interface lo0.147
+set routing-instances CE-147 interface ge-0/0/3.147
+set routing-instances CE-147 routing-options autonomous-system 10147 independent-domain
+set routing-instances CE-147 routing-options static route 100.64.147.0/24 discard
+set routing-instances CE-147 routing-options rib CE-147.inet6.0 static route 2001:164:147::/48 discard
+set routing-instances CE-147 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.18 family inet
+set routing-instances CE-147 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::112 family inet6
+set routing-instances CE-147 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.148 vlan-id 148 family inet address 172.20.4.21/31
+set interfaces ge-0/0/3.148 vlan-id 148 family inet6 address 2001:200:20:3::115/127
+set interfaces lo0.148 family inet address 100.64.148.1/32
+set interfaces lo0.148 family inet6 address 2001:164:148::1/128
+set routing-instances CE-148 instance-type virtual-router
+set routing-instances CE-148 interface lo0.148
+set routing-instances CE-148 interface ge-0/0/3.148
+set routing-instances CE-148 routing-options autonomous-system 10148 independent-domain
+set routing-instances CE-148 routing-options static route 100.64.148.0/24 discard
+set routing-instances CE-148 routing-options rib CE-148.inet6.0 static route 2001:164:148::/48 discard
+set routing-instances CE-148 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.20 family inet
+set routing-instances CE-148 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::114 family inet6
+set routing-instances CE-148 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.149 vlan-id 149 family inet address 172.20.4.23/31
+set interfaces ge-0/0/3.149 vlan-id 149 family inet6 address 2001:200:20:3::117/127
+set interfaces lo0.149 family inet address 100.64.149.1/32
+set interfaces lo0.149 family inet6 address 2001:164:149::1/128
+set routing-instances CE-149 instance-type virtual-router
+set routing-instances CE-149 interface lo0.149
+set routing-instances CE-149 interface ge-0/0/3.149
+set routing-instances CE-149 routing-options autonomous-system 10149 independent-domain
+set routing-instances CE-149 routing-options static route 100.64.149.0/24 discard
+set routing-instances CE-149 routing-options rib CE-149.inet6.0 static route 2001:164:149::/48 discard
+set routing-instances CE-149 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.22 family inet
+set routing-instances CE-149 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::116 family inet6
+set routing-instances CE-149 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.150 vlan-id 150 family inet address 172.20.4.25/31
+set interfaces ge-0/0/3.150 vlan-id 150 family inet6 address 2001:200:20:3::119/127
+set interfaces lo0.150 family inet address 100.64.150.1/32
+set interfaces lo0.150 family inet6 address 2001:164:150::1/128
+set routing-instances CE-150 instance-type virtual-router
+set routing-instances CE-150 interface lo0.150
+set routing-instances CE-150 interface ge-0/0/3.150
+set routing-instances CE-150 routing-options autonomous-system 10150 independent-domain
+set routing-instances CE-150 routing-options static route 100.64.150.0/24 discard
+set routing-instances CE-150 routing-options rib CE-150.inet6.0 static route 2001:164:150::/48 discard
+set routing-instances CE-150 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.24 family inet
+set routing-instances CE-150 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::118 family inet6
+set routing-instances CE-150 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.151 vlan-id 151 family inet address 172.20.4.27/31
+set interfaces ge-0/0/3.151 vlan-id 151 family inet6 address 2001:200:20:3::11b/127
+set interfaces lo0.151 family inet address 100.64.151.1/32
+set interfaces lo0.151 family inet6 address 2001:164:151::1/128
+set routing-instances CE-151 instance-type virtual-router
+set routing-instances CE-151 interface lo0.151
+set routing-instances CE-151 interface ge-0/0/3.151
+set routing-instances CE-151 routing-options autonomous-system 10151 independent-domain
+set routing-instances CE-151 routing-options static route 100.64.151.0/24 discard
+set routing-instances CE-151 routing-options rib CE-151.inet6.0 static route 2001:164:151::/48 discard
+set routing-instances CE-151 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.26 family inet
+set routing-instances CE-151 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::11a family inet6
+set routing-instances CE-151 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.152 vlan-id 152 family inet address 172.20.4.29/31
+set interfaces ge-0/0/3.152 vlan-id 152 family inet6 address 2001:200:20:3::11d/127
+set interfaces lo0.152 family inet address 100.64.152.1/32
+set interfaces lo0.152 family inet6 address 2001:164:152::1/128
+set routing-instances CE-152 instance-type virtual-router
+set routing-instances CE-152 interface lo0.152
+set routing-instances CE-152 interface ge-0/0/3.152
+set routing-instances CE-152 routing-options autonomous-system 10152 independent-domain
+set routing-instances CE-152 routing-options static route 100.64.152.0/24 discard
+set routing-instances CE-152 routing-options rib CE-152.inet6.0 static route 2001:164:152::/48 discard
+set routing-instances CE-152 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.28 family inet
+set routing-instances CE-152 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::11c family inet6
+set routing-instances CE-152 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.153 vlan-id 153 family inet address 172.20.4.31/31
+set interfaces ge-0/0/3.153 vlan-id 153 family inet6 address 2001:200:20:3::11f/127
+set interfaces lo0.153 family inet address 100.64.153.1/32
+set interfaces lo0.153 family inet6 address 2001:164:153::1/128
+set routing-instances CE-153 instance-type virtual-router
+set routing-instances CE-153 interface lo0.153
+set routing-instances CE-153 interface ge-0/0/3.153
+set routing-instances CE-153 routing-options autonomous-system 10153 independent-domain
+set routing-instances CE-153 routing-options static route 100.64.153.0/24 discard
+set routing-instances CE-153 routing-options rib CE-153.inet6.0 static route 2001:164:153::/48 discard
+set routing-instances CE-153 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.30 family inet
+set routing-instances CE-153 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::11e family inet6
+set routing-instances CE-153 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.154 vlan-id 154 family inet address 172.20.4.33/31
+set interfaces ge-0/0/3.154 vlan-id 154 family inet6 address 2001:200:20:3::121/127
+set interfaces lo0.154 family inet address 100.64.154.1/32
+set interfaces lo0.154 family inet6 address 2001:164:154::1/128
+set routing-instances CE-154 instance-type virtual-router
+set routing-instances CE-154 interface lo0.154
+set routing-instances CE-154 interface ge-0/0/3.154
+set routing-instances CE-154 routing-options autonomous-system 10154 independent-domain
+set routing-instances CE-154 routing-options static route 100.64.154.0/24 discard
+set routing-instances CE-154 routing-options rib CE-154.inet6.0 static route 2001:164:154::/48 discard
+set routing-instances CE-154 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.32 family inet
+set routing-instances CE-154 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::120 family inet6
+set routing-instances CE-154 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.155 vlan-id 155 family inet address 172.20.4.35/31
+set interfaces ge-0/0/3.155 vlan-id 155 family inet6 address 2001:200:20:3::123/127
+set interfaces lo0.155 family inet address 100.64.155.1/32
+set interfaces lo0.155 family inet6 address 2001:164:155::1/128
+set routing-instances CE-155 instance-type virtual-router
+set routing-instances CE-155 interface lo0.155
+set routing-instances CE-155 interface ge-0/0/3.155
+set routing-instances CE-155 routing-options autonomous-system 10155 independent-domain
+set routing-instances CE-155 routing-options static route 100.64.155.0/24 discard
+set routing-instances CE-155 routing-options rib CE-155.inet6.0 static route 2001:164:155::/48 discard
+set routing-instances CE-155 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.34 family inet
+set routing-instances CE-155 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::122 family inet6
+set routing-instances CE-155 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.156 vlan-id 156 family inet address 172.20.4.37/31
+set interfaces ge-0/0/3.156 vlan-id 156 family inet6 address 2001:200:20:3::125/127
+set interfaces lo0.156 family inet address 100.64.156.1/32
+set interfaces lo0.156 family inet6 address 2001:164:156::1/128
+set routing-instances CE-156 instance-type virtual-router
+set routing-instances CE-156 interface lo0.156
+set routing-instances CE-156 interface ge-0/0/3.156
+set routing-instances CE-156 routing-options autonomous-system 10156 independent-domain
+set routing-instances CE-156 routing-options static route 100.64.156.0/24 discard
+set routing-instances CE-156 routing-options rib CE-156.inet6.0 static route 2001:164:156::/48 discard
+set routing-instances CE-156 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.36 family inet
+set routing-instances CE-156 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::124 family inet6
+set routing-instances CE-156 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.157 vlan-id 157 family inet address 172.20.4.39/31
+set interfaces ge-0/0/3.157 vlan-id 157 family inet6 address 2001:200:20:3::127/127
+set interfaces lo0.157 family inet address 100.64.157.1/32
+set interfaces lo0.157 family inet6 address 2001:164:157::1/128
+set routing-instances CE-157 instance-type virtual-router
+set routing-instances CE-157 interface lo0.157
+set routing-instances CE-157 interface ge-0/0/3.157
+set routing-instances CE-157 routing-options autonomous-system 10157 independent-domain
+set routing-instances CE-157 routing-options static route 100.64.157.0/24 discard
+set routing-instances CE-157 routing-options rib CE-157.inet6.0 static route 2001:164:157::/48 discard
+set routing-instances CE-157 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.38 family inet
+set routing-instances CE-157 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::126 family inet6
+set routing-instances CE-157 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.158 vlan-id 158 family inet address 172.20.4.41/31
+set interfaces ge-0/0/3.158 vlan-id 158 family inet6 address 2001:200:20:3::129/127
+set interfaces lo0.158 family inet address 100.64.158.1/32
+set interfaces lo0.158 family inet6 address 2001:164:158::1/128
+set routing-instances CE-158 instance-type virtual-router
+set routing-instances CE-158 interface lo0.158
+set routing-instances CE-158 interface ge-0/0/3.158
+set routing-instances CE-158 routing-options autonomous-system 10158 independent-domain
+set routing-instances CE-158 routing-options static route 100.64.158.0/24 discard
+set routing-instances CE-158 routing-options rib CE-158.inet6.0 static route 2001:164:158::/48 discard
+set routing-instances CE-158 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.40 family inet
+set routing-instances CE-158 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::128 family inet6
+set routing-instances CE-158 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.159 vlan-id 159 family inet address 172.20.4.43/31
+set interfaces ge-0/0/3.159 vlan-id 159 family inet6 address 2001:200:20:3::12b/127
+set interfaces lo0.159 family inet address 100.64.159.1/32
+set interfaces lo0.159 family inet6 address 2001:164:159::1/128
+set routing-instances CE-159 instance-type virtual-router
+set routing-instances CE-159 interface lo0.159
+set routing-instances CE-159 interface ge-0/0/3.159
+set routing-instances CE-159 routing-options autonomous-system 10159 independent-domain
+set routing-instances CE-159 routing-options static route 100.64.159.0/24 discard
+set routing-instances CE-159 routing-options rib CE-159.inet6.0 static route 2001:164:159::/48 discard
+set routing-instances CE-159 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.42 family inet
+set routing-instances CE-159 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::12a family inet6
+set routing-instances CE-159 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.160 vlan-id 160 family inet address 172.20.4.45/31
+set interfaces ge-0/0/3.160 vlan-id 160 family inet6 address 2001:200:20:3::12d/127
+set interfaces lo0.160 family inet address 100.64.160.1/32
+set interfaces lo0.160 family inet6 address 2001:164:160::1/128
+set routing-instances CE-160 instance-type virtual-router
+set routing-instances CE-160 interface lo0.160
+set routing-instances CE-160 interface ge-0/0/3.160
+set routing-instances CE-160 routing-options autonomous-system 10160 independent-domain
+set routing-instances CE-160 routing-options static route 100.64.160.0/24 discard
+set routing-instances CE-160 routing-options rib CE-160.inet6.0 static route 2001:164:160::/48 discard
+set routing-instances CE-160 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.44 family inet
+set routing-instances CE-160 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::12c family inet6
+set routing-instances CE-160 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.161 vlan-id 161 family inet address 172.20.4.47/31
+set interfaces ge-0/0/3.161 vlan-id 161 family inet6 address 2001:200:20:3::12f/127
+set interfaces lo0.161 family inet address 100.64.161.1/32
+set interfaces lo0.161 family inet6 address 2001:164:161::1/128
+set routing-instances CE-161 instance-type virtual-router
+set routing-instances CE-161 interface lo0.161
+set routing-instances CE-161 interface ge-0/0/3.161
+set routing-instances CE-161 routing-options autonomous-system 10161 independent-domain
+set routing-instances CE-161 routing-options static route 100.64.161.0/24 discard
+set routing-instances CE-161 routing-options rib CE-161.inet6.0 static route 2001:164:161::/48 discard
+set routing-instances CE-161 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.46 family inet
+set routing-instances CE-161 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::12e family inet6
+set routing-instances CE-161 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.162 vlan-id 162 family inet address 172.20.4.49/31
+set interfaces ge-0/0/3.162 vlan-id 162 family inet6 address 2001:200:20:3::131/127
+set interfaces lo0.162 family inet address 100.64.162.1/32
+set interfaces lo0.162 family inet6 address 2001:164:162::1/128
+set routing-instances CE-162 instance-type virtual-router
+set routing-instances CE-162 interface lo0.162
+set routing-instances CE-162 interface ge-0/0/3.162
+set routing-instances CE-162 routing-options autonomous-system 10162 independent-domain
+set routing-instances CE-162 routing-options static route 100.64.162.0/24 discard
+set routing-instances CE-162 routing-options rib CE-162.inet6.0 static route 2001:164:162::/48 discard
+set routing-instances CE-162 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.48 family inet
+set routing-instances CE-162 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::130 family inet6
+set routing-instances CE-162 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.163 vlan-id 163 family inet address 172.20.4.51/31
+set interfaces ge-0/0/3.163 vlan-id 163 family inet6 address 2001:200:20:3::133/127
+set interfaces lo0.163 family inet address 100.64.163.1/32
+set interfaces lo0.163 family inet6 address 2001:164:163::1/128
+set routing-instances CE-163 instance-type virtual-router
+set routing-instances CE-163 interface lo0.163
+set routing-instances CE-163 interface ge-0/0/3.163
+set routing-instances CE-163 routing-options autonomous-system 10163 independent-domain
+set routing-instances CE-163 routing-options static route 100.64.163.0/24 discard
+set routing-instances CE-163 routing-options rib CE-163.inet6.0 static route 2001:164:163::/48 discard
+set routing-instances CE-163 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.50 family inet
+set routing-instances CE-163 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::132 family inet6
+set routing-instances CE-163 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.164 vlan-id 164 family inet address 172.20.4.53/31
+set interfaces ge-0/0/3.164 vlan-id 164 family inet6 address 2001:200:20:3::135/127
+set interfaces lo0.164 family inet address 100.64.164.1/32
+set interfaces lo0.164 family inet6 address 2001:164:164::1/128
+set routing-instances CE-164 instance-type virtual-router
+set routing-instances CE-164 interface lo0.164
+set routing-instances CE-164 interface ge-0/0/3.164
+set routing-instances CE-164 routing-options autonomous-system 10164 independent-domain
+set routing-instances CE-164 routing-options static route 100.64.164.0/24 discard
+set routing-instances CE-164 routing-options rib CE-164.inet6.0 static route 2001:164:164::/48 discard
+set routing-instances CE-164 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.52 family inet
+set routing-instances CE-164 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::134 family inet6
+set routing-instances CE-164 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.165 vlan-id 165 family inet address 172.20.4.55/31
+set interfaces ge-0/0/3.165 vlan-id 165 family inet6 address 2001:200:20:3::137/127
+set interfaces lo0.165 family inet address 100.64.165.1/32
+set interfaces lo0.165 family inet6 address 2001:164:165::1/128
+set routing-instances CE-165 instance-type virtual-router
+set routing-instances CE-165 interface lo0.165
+set routing-instances CE-165 interface ge-0/0/3.165
+set routing-instances CE-165 routing-options autonomous-system 10165 independent-domain
+set routing-instances CE-165 routing-options static route 100.64.165.0/24 discard
+set routing-instances CE-165 routing-options rib CE-165.inet6.0 static route 2001:164:165::/48 discard
+set routing-instances CE-165 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.54 family inet
+set routing-instances CE-165 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::136 family inet6
+set routing-instances CE-165 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.166 vlan-id 166 family inet address 172.20.4.57/31
+set interfaces ge-0/0/3.166 vlan-id 166 family inet6 address 2001:200:20:3::139/127
+set interfaces lo0.166 family inet address 100.64.166.1/32
+set interfaces lo0.166 family inet6 address 2001:164:166::1/128
+set routing-instances CE-166 instance-type virtual-router
+set routing-instances CE-166 interface lo0.166
+set routing-instances CE-166 interface ge-0/0/3.166
+set routing-instances CE-166 routing-options autonomous-system 10166 independent-domain
+set routing-instances CE-166 routing-options static route 100.64.166.0/24 discard
+set routing-instances CE-166 routing-options rib CE-166.inet6.0 static route 2001:164:166::/48 discard
+set routing-instances CE-166 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.56 family inet
+set routing-instances CE-166 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::138 family inet6
+set routing-instances CE-166 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.167 vlan-id 167 family inet address 172.20.4.59/31
+set interfaces ge-0/0/3.167 vlan-id 167 family inet6 address 2001:200:20:3::13b/127
+set interfaces lo0.167 family inet address 100.64.167.1/32
+set interfaces lo0.167 family inet6 address 2001:164:167::1/128
+set routing-instances CE-167 instance-type virtual-router
+set routing-instances CE-167 interface lo0.167
+set routing-instances CE-167 interface ge-0/0/3.167
+set routing-instances CE-167 routing-options autonomous-system 10167 independent-domain
+set routing-instances CE-167 routing-options static route 100.64.167.0/24 discard
+set routing-instances CE-167 routing-options rib CE-167.inet6.0 static route 2001:164:167::/48 discard
+set routing-instances CE-167 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.58 family inet
+set routing-instances CE-167 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::13a family inet6
+set routing-instances CE-167 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.168 vlan-id 168 family inet address 172.20.4.61/31
+set interfaces ge-0/0/3.168 vlan-id 168 family inet6 address 2001:200:20:3::13d/127
+set interfaces lo0.168 family inet address 100.64.168.1/32
+set interfaces lo0.168 family inet6 address 2001:164:168::1/128
+set routing-instances CE-168 instance-type virtual-router
+set routing-instances CE-168 interface lo0.168
+set routing-instances CE-168 interface ge-0/0/3.168
+set routing-instances CE-168 routing-options autonomous-system 10168 independent-domain
+set routing-instances CE-168 routing-options static route 100.64.168.0/24 discard
+set routing-instances CE-168 routing-options rib CE-168.inet6.0 static route 2001:164:168::/48 discard
+set routing-instances CE-168 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.60 family inet
+set routing-instances CE-168 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::13c family inet6
+set routing-instances CE-168 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.169 vlan-id 169 family inet address 172.20.4.63/31
+set interfaces ge-0/0/3.169 vlan-id 169 family inet6 address 2001:200:20:3::13f/127
+set interfaces lo0.169 family inet address 100.64.169.1/32
+set interfaces lo0.169 family inet6 address 2001:164:169::1/128
+set routing-instances CE-169 instance-type virtual-router
+set routing-instances CE-169 interface lo0.169
+set routing-instances CE-169 interface ge-0/0/3.169
+set routing-instances CE-169 routing-options autonomous-system 10169 independent-domain
+set routing-instances CE-169 routing-options static route 100.64.169.0/24 discard
+set routing-instances CE-169 routing-options rib CE-169.inet6.0 static route 2001:164:169::/48 discard
+set routing-instances CE-169 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.62 family inet
+set routing-instances CE-169 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::13e family inet6
+set routing-instances CE-169 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.170 vlan-id 170 family inet address 172.20.4.65/31
+set interfaces ge-0/0/3.170 vlan-id 170 family inet6 address 2001:200:20:3::141/127
+set interfaces lo0.170 family inet address 100.64.170.1/32
+set interfaces lo0.170 family inet6 address 2001:164:170::1/128
+set routing-instances CE-170 instance-type virtual-router
+set routing-instances CE-170 interface lo0.170
+set routing-instances CE-170 interface ge-0/0/3.170
+set routing-instances CE-170 routing-options autonomous-system 10170 independent-domain
+set routing-instances CE-170 routing-options static route 100.64.170.0/24 discard
+set routing-instances CE-170 routing-options rib CE-170.inet6.0 static route 2001:164:170::/48 discard
+set routing-instances CE-170 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.64 family inet
+set routing-instances CE-170 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::140 family inet6
+set routing-instances CE-170 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.171 vlan-id 171 family inet address 172.20.4.67/31
+set interfaces ge-0/0/3.171 vlan-id 171 family inet6 address 2001:200:20:3::143/127
+set interfaces lo0.171 family inet address 100.64.171.1/32
+set interfaces lo0.171 family inet6 address 2001:164:171::1/128
+set routing-instances CE-171 instance-type virtual-router
+set routing-instances CE-171 interface lo0.171
+set routing-instances CE-171 interface ge-0/0/3.171
+set routing-instances CE-171 routing-options autonomous-system 10171 independent-domain
+set routing-instances CE-171 routing-options static route 100.64.171.0/24 discard
+set routing-instances CE-171 routing-options rib CE-171.inet6.0 static route 2001:164:171::/48 discard
+set routing-instances CE-171 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.66 family inet
+set routing-instances CE-171 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::142 family inet6
+set routing-instances CE-171 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.172 vlan-id 172 family inet address 172.20.4.69/31
+set interfaces ge-0/0/3.172 vlan-id 172 family inet6 address 2001:200:20:3::145/127
+set interfaces lo0.172 family inet address 100.64.172.1/32
+set interfaces lo0.172 family inet6 address 2001:164:172::1/128
+set routing-instances CE-172 instance-type virtual-router
+set routing-instances CE-172 interface lo0.172
+set routing-instances CE-172 interface ge-0/0/3.172
+set routing-instances CE-172 routing-options autonomous-system 10172 independent-domain
+set routing-instances CE-172 routing-options static route 100.64.172.0/24 discard
+set routing-instances CE-172 routing-options rib CE-172.inet6.0 static route 2001:164:172::/48 discard
+set routing-instances CE-172 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.68 family inet
+set routing-instances CE-172 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::144 family inet6
+set routing-instances CE-172 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.173 vlan-id 173 family inet address 172.20.4.71/31
+set interfaces ge-0/0/3.173 vlan-id 173 family inet6 address 2001:200:20:3::147/127
+set interfaces lo0.173 family inet address 100.64.173.1/32
+set interfaces lo0.173 family inet6 address 2001:164:173::1/128
+set routing-instances CE-173 instance-type virtual-router
+set routing-instances CE-173 interface lo0.173
+set routing-instances CE-173 interface ge-0/0/3.173
+set routing-instances CE-173 routing-options autonomous-system 10173 independent-domain
+set routing-instances CE-173 routing-options static route 100.64.173.0/24 discard
+set routing-instances CE-173 routing-options rib CE-173.inet6.0 static route 2001:164:173::/48 discard
+set routing-instances CE-173 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.70 family inet
+set routing-instances CE-173 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::146 family inet6
+set routing-instances CE-173 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.174 vlan-id 174 family inet address 172.20.4.73/31
+set interfaces ge-0/0/3.174 vlan-id 174 family inet6 address 2001:200:20:3::149/127
+set interfaces lo0.174 family inet address 100.64.174.1/32
+set interfaces lo0.174 family inet6 address 2001:164:174::1/128
+set routing-instances CE-174 instance-type virtual-router
+set routing-instances CE-174 interface lo0.174
+set routing-instances CE-174 interface ge-0/0/3.174
+set routing-instances CE-174 routing-options autonomous-system 10174 independent-domain
+set routing-instances CE-174 routing-options static route 100.64.174.0/24 discard
+set routing-instances CE-174 routing-options rib CE-174.inet6.0 static route 2001:164:174::/48 discard
+set routing-instances CE-174 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.72 family inet
+set routing-instances CE-174 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::148 family inet6
+set routing-instances CE-174 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.175 vlan-id 175 family inet address 172.20.4.75/31
+set interfaces ge-0/0/3.175 vlan-id 175 family inet6 address 2001:200:20:3::14b/127
+set interfaces lo0.175 family inet address 100.64.175.1/32
+set interfaces lo0.175 family inet6 address 2001:164:175::1/128
+set routing-instances CE-175 instance-type virtual-router
+set routing-instances CE-175 interface lo0.175
+set routing-instances CE-175 interface ge-0/0/3.175
+set routing-instances CE-175 routing-options autonomous-system 10175 independent-domain
+set routing-instances CE-175 routing-options static route 100.64.175.0/24 discard
+set routing-instances CE-175 routing-options rib CE-175.inet6.0 static route 2001:164:175::/48 discard
+set routing-instances CE-175 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.74 family inet
+set routing-instances CE-175 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::14a family inet6
+set routing-instances CE-175 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.176 vlan-id 176 family inet address 172.20.4.77/31
+set interfaces ge-0/0/3.176 vlan-id 176 family inet6 address 2001:200:20:3::14d/127
+set interfaces lo0.176 family inet address 100.64.176.1/32
+set interfaces lo0.176 family inet6 address 2001:164:176::1/128
+set routing-instances CE-176 instance-type virtual-router
+set routing-instances CE-176 interface lo0.176
+set routing-instances CE-176 interface ge-0/0/3.176
+set routing-instances CE-176 routing-options autonomous-system 10176 independent-domain
+set routing-instances CE-176 routing-options static route 100.64.176.0/24 discard
+set routing-instances CE-176 routing-options rib CE-176.inet6.0 static route 2001:164:176::/48 discard
+set routing-instances CE-176 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.76 family inet
+set routing-instances CE-176 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::14c family inet6
+set routing-instances CE-176 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.177 vlan-id 177 family inet address 172.20.4.79/31
+set interfaces ge-0/0/3.177 vlan-id 177 family inet6 address 2001:200:20:3::14f/127
+set interfaces lo0.177 family inet address 100.64.177.1/32
+set interfaces lo0.177 family inet6 address 2001:164:177::1/128
+set routing-instances CE-177 instance-type virtual-router
+set routing-instances CE-177 interface lo0.177
+set routing-instances CE-177 interface ge-0/0/3.177
+set routing-instances CE-177 routing-options autonomous-system 10177 independent-domain
+set routing-instances CE-177 routing-options static route 100.64.177.0/24 discard
+set routing-instances CE-177 routing-options rib CE-177.inet6.0 static route 2001:164:177::/48 discard
+set routing-instances CE-177 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.78 family inet
+set routing-instances CE-177 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::14e family inet6
+set routing-instances CE-177 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.178 vlan-id 178 family inet address 172.20.4.81/31
+set interfaces ge-0/0/3.178 vlan-id 178 family inet6 address 2001:200:20:3::151/127
+set interfaces lo0.178 family inet address 100.64.178.1/32
+set interfaces lo0.178 family inet6 address 2001:164:178::1/128
+set routing-instances CE-178 instance-type virtual-router
+set routing-instances CE-178 interface lo0.178
+set routing-instances CE-178 interface ge-0/0/3.178
+set routing-instances CE-178 routing-options autonomous-system 10178 independent-domain
+set routing-instances CE-178 routing-options static route 100.64.178.0/24 discard
+set routing-instances CE-178 routing-options rib CE-178.inet6.0 static route 2001:164:178::/48 discard
+set routing-instances CE-178 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.80 family inet
+set routing-instances CE-178 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::150 family inet6
+set routing-instances CE-178 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.179 vlan-id 179 family inet address 172.20.4.83/31
+set interfaces ge-0/0/3.179 vlan-id 179 family inet6 address 2001:200:20:3::153/127
+set interfaces lo0.179 family inet address 100.64.179.1/32
+set interfaces lo0.179 family inet6 address 2001:164:179::1/128
+set routing-instances CE-179 instance-type virtual-router
+set routing-instances CE-179 interface lo0.179
+set routing-instances CE-179 interface ge-0/0/3.179
+set routing-instances CE-179 routing-options autonomous-system 10179 independent-domain
+set routing-instances CE-179 routing-options static route 100.64.179.0/24 discard
+set routing-instances CE-179 routing-options rib CE-179.inet6.0 static route 2001:164:179::/48 discard
+set routing-instances CE-179 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.82 family inet
+set routing-instances CE-179 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::152 family inet6
+set routing-instances CE-179 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.180 vlan-id 180 family inet address 172.20.4.85/31
+set interfaces ge-0/0/3.180 vlan-id 180 family inet6 address 2001:200:20:3::155/127
+set interfaces lo0.180 family inet address 100.64.180.1/32
+set interfaces lo0.180 family inet6 address 2001:164:180::1/128
+set routing-instances CE-180 instance-type virtual-router
+set routing-instances CE-180 interface lo0.180
+set routing-instances CE-180 interface ge-0/0/3.180
+set routing-instances CE-180 routing-options autonomous-system 10180 independent-domain
+set routing-instances CE-180 routing-options static route 100.64.180.0/24 discard
+set routing-instances CE-180 routing-options rib CE-180.inet6.0 static route 2001:164:180::/48 discard
+set routing-instances CE-180 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.84 family inet
+set routing-instances CE-180 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::154 family inet6
+set routing-instances CE-180 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.181 vlan-id 181 family inet address 172.20.4.87/31
+set interfaces ge-0/0/3.181 vlan-id 181 family inet6 address 2001:200:20:3::157/127
+set interfaces lo0.181 family inet address 100.64.181.1/32
+set interfaces lo0.181 family inet6 address 2001:164:181::1/128
+set routing-instances CE-181 instance-type virtual-router
+set routing-instances CE-181 interface lo0.181
+set routing-instances CE-181 interface ge-0/0/3.181
+set routing-instances CE-181 routing-options autonomous-system 10181 independent-domain
+set routing-instances CE-181 routing-options static route 100.64.181.0/24 discard
+set routing-instances CE-181 routing-options rib CE-181.inet6.0 static route 2001:164:181::/48 discard
+set routing-instances CE-181 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.86 family inet
+set routing-instances CE-181 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::156 family inet6
+set routing-instances CE-181 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.182 vlan-id 182 family inet address 172.20.4.89/31
+set interfaces ge-0/0/3.182 vlan-id 182 family inet6 address 2001:200:20:3::159/127
+set interfaces lo0.182 family inet address 100.64.182.1/32
+set interfaces lo0.182 family inet6 address 2001:164:182::1/128
+set routing-instances CE-182 instance-type virtual-router
+set routing-instances CE-182 interface lo0.182
+set routing-instances CE-182 interface ge-0/0/3.182
+set routing-instances CE-182 routing-options autonomous-system 10182 independent-domain
+set routing-instances CE-182 routing-options static route 100.64.182.0/24 discard
+set routing-instances CE-182 routing-options rib CE-182.inet6.0 static route 2001:164:182::/48 discard
+set routing-instances CE-182 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.88 family inet
+set routing-instances CE-182 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::158 family inet6
+set routing-instances CE-182 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.183 vlan-id 183 family inet address 172.20.4.91/31
+set interfaces ge-0/0/3.183 vlan-id 183 family inet6 address 2001:200:20:3::15b/127
+set interfaces lo0.183 family inet address 100.64.183.1/32
+set interfaces lo0.183 family inet6 address 2001:164:183::1/128
+set routing-instances CE-183 instance-type virtual-router
+set routing-instances CE-183 interface lo0.183
+set routing-instances CE-183 interface ge-0/0/3.183
+set routing-instances CE-183 routing-options autonomous-system 10183 independent-domain
+set routing-instances CE-183 routing-options static route 100.64.183.0/24 discard
+set routing-instances CE-183 routing-options rib CE-183.inet6.0 static route 2001:164:183::/48 discard
+set routing-instances CE-183 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.90 family inet
+set routing-instances CE-183 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::15a family inet6
+set routing-instances CE-183 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.184 vlan-id 184 family inet address 172.20.4.93/31
+set interfaces ge-0/0/3.184 vlan-id 184 family inet6 address 2001:200:20:3::15d/127
+set interfaces lo0.184 family inet address 100.64.184.1/32
+set interfaces lo0.184 family inet6 address 2001:164:184::1/128
+set routing-instances CE-184 instance-type virtual-router
+set routing-instances CE-184 interface lo0.184
+set routing-instances CE-184 interface ge-0/0/3.184
+set routing-instances CE-184 routing-options autonomous-system 10184 independent-domain
+set routing-instances CE-184 routing-options static route 100.64.184.0/24 discard
+set routing-instances CE-184 routing-options rib CE-184.inet6.0 static route 2001:164:184::/48 discard
+set routing-instances CE-184 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.92 family inet
+set routing-instances CE-184 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::15c family inet6
+set routing-instances CE-184 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.185 vlan-id 185 family inet address 172.20.4.95/31
+set interfaces ge-0/0/3.185 vlan-id 185 family inet6 address 2001:200:20:3::15f/127
+set interfaces lo0.185 family inet address 100.64.185.1/32
+set interfaces lo0.185 family inet6 address 2001:164:185::1/128
+set routing-instances CE-185 instance-type virtual-router
+set routing-instances CE-185 interface lo0.185
+set routing-instances CE-185 interface ge-0/0/3.185
+set routing-instances CE-185 routing-options autonomous-system 10185 independent-domain
+set routing-instances CE-185 routing-options static route 100.64.185.0/24 discard
+set routing-instances CE-185 routing-options rib CE-185.inet6.0 static route 2001:164:185::/48 discard
+set routing-instances CE-185 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.94 family inet
+set routing-instances CE-185 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::15e family inet6
+set routing-instances CE-185 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.186 vlan-id 186 family inet address 172.20.4.97/31
+set interfaces ge-0/0/3.186 vlan-id 186 family inet6 address 2001:200:20:3::161/127
+set interfaces lo0.186 family inet address 100.64.186.1/32
+set interfaces lo0.186 family inet6 address 2001:164:186::1/128
+set routing-instances CE-186 instance-type virtual-router
+set routing-instances CE-186 interface lo0.186
+set routing-instances CE-186 interface ge-0/0/3.186
+set routing-instances CE-186 routing-options autonomous-system 10186 independent-domain
+set routing-instances CE-186 routing-options static route 100.64.186.0/24 discard
+set routing-instances CE-186 routing-options rib CE-186.inet6.0 static route 2001:164:186::/48 discard
+set routing-instances CE-186 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.96 family inet
+set routing-instances CE-186 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::160 family inet6
+set routing-instances CE-186 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.187 vlan-id 187 family inet address 172.20.4.99/31
+set interfaces ge-0/0/3.187 vlan-id 187 family inet6 address 2001:200:20:3::163/127
+set interfaces lo0.187 family inet address 100.64.187.1/32
+set interfaces lo0.187 family inet6 address 2001:164:187::1/128
+set routing-instances CE-187 instance-type virtual-router
+set routing-instances CE-187 interface lo0.187
+set routing-instances CE-187 interface ge-0/0/3.187
+set routing-instances CE-187 routing-options autonomous-system 10187 independent-domain
+set routing-instances CE-187 routing-options static route 100.64.187.0/24 discard
+set routing-instances CE-187 routing-options rib CE-187.inet6.0 static route 2001:164:187::/48 discard
+set routing-instances CE-187 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.98 family inet
+set routing-instances CE-187 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::162 family inet6
+set routing-instances CE-187 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.188 vlan-id 188 family inet address 172.20.4.101/31
+set interfaces ge-0/0/3.188 vlan-id 188 family inet6 address 2001:200:20:3::165/127
+set interfaces lo0.188 family inet address 100.64.188.1/32
+set interfaces lo0.188 family inet6 address 2001:164:188::1/128
+set routing-instances CE-188 instance-type virtual-router
+set routing-instances CE-188 interface lo0.188
+set routing-instances CE-188 interface ge-0/0/3.188
+set routing-instances CE-188 routing-options autonomous-system 10188 independent-domain
+set routing-instances CE-188 routing-options static route 100.64.188.0/24 discard
+set routing-instances CE-188 routing-options rib CE-188.inet6.0 static route 2001:164:188::/48 discard
+set routing-instances CE-188 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.100 family inet
+set routing-instances CE-188 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::164 family inet6
+set routing-instances CE-188 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.189 vlan-id 189 family inet address 172.20.4.103/31
+set interfaces ge-0/0/3.189 vlan-id 189 family inet6 address 2001:200:20:3::167/127
+set interfaces lo0.189 family inet address 100.64.189.1/32
+set interfaces lo0.189 family inet6 address 2001:164:189::1/128
+set routing-instances CE-189 instance-type virtual-router
+set routing-instances CE-189 interface lo0.189
+set routing-instances CE-189 interface ge-0/0/3.189
+set routing-instances CE-189 routing-options autonomous-system 10189 independent-domain
+set routing-instances CE-189 routing-options static route 100.64.189.0/24 discard
+set routing-instances CE-189 routing-options rib CE-189.inet6.0 static route 2001:164:189::/48 discard
+set routing-instances CE-189 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.102 family inet
+set routing-instances CE-189 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::166 family inet6
+set routing-instances CE-189 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.190 vlan-id 190 family inet address 172.20.4.105/31
+set interfaces ge-0/0/3.190 vlan-id 190 family inet6 address 2001:200:20:3::169/127
+set interfaces lo0.190 family inet address 100.64.190.1/32
+set interfaces lo0.190 family inet6 address 2001:164:190::1/128
+set routing-instances CE-190 instance-type virtual-router
+set routing-instances CE-190 interface lo0.190
+set routing-instances CE-190 interface ge-0/0/3.190
+set routing-instances CE-190 routing-options autonomous-system 10190 independent-domain
+set routing-instances CE-190 routing-options static route 100.64.190.0/24 discard
+set routing-instances CE-190 routing-options rib CE-190.inet6.0 static route 2001:164:190::/48 discard
+set routing-instances CE-190 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.104 family inet
+set routing-instances CE-190 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::168 family inet6
+set routing-instances CE-190 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.191 vlan-id 191 family inet address 172.20.4.107/31
+set interfaces ge-0/0/3.191 vlan-id 191 family inet6 address 2001:200:20:3::16b/127
+set interfaces lo0.191 family inet address 100.64.191.1/32
+set interfaces lo0.191 family inet6 address 2001:164:191::1/128
+set routing-instances CE-191 instance-type virtual-router
+set routing-instances CE-191 interface lo0.191
+set routing-instances CE-191 interface ge-0/0/3.191
+set routing-instances CE-191 routing-options autonomous-system 10191 independent-domain
+set routing-instances CE-191 routing-options static route 100.64.191.0/24 discard
+set routing-instances CE-191 routing-options rib CE-191.inet6.0 static route 2001:164:191::/48 discard
+set routing-instances CE-191 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.106 family inet
+set routing-instances CE-191 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::16a family inet6
+set routing-instances CE-191 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.192 vlan-id 192 family inet address 172.20.4.109/31
+set interfaces ge-0/0/3.192 vlan-id 192 family inet6 address 2001:200:20:3::16d/127
+set interfaces lo0.192 family inet address 100.64.192.1/32
+set interfaces lo0.192 family inet6 address 2001:164:192::1/128
+set routing-instances CE-192 instance-type virtual-router
+set routing-instances CE-192 interface lo0.192
+set routing-instances CE-192 interface ge-0/0/3.192
+set routing-instances CE-192 routing-options autonomous-system 10192 independent-domain
+set routing-instances CE-192 routing-options static route 100.64.192.0/24 discard
+set routing-instances CE-192 routing-options rib CE-192.inet6.0 static route 2001:164:192::/48 discard
+set routing-instances CE-192 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.108 family inet
+set routing-instances CE-192 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::16c family inet6
+set routing-instances CE-192 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.193 vlan-id 193 family inet address 172.20.4.111/31
+set interfaces ge-0/0/3.193 vlan-id 193 family inet6 address 2001:200:20:3::16f/127
+set interfaces lo0.193 family inet address 100.64.193.1/32
+set interfaces lo0.193 family inet6 address 2001:164:193::1/128
+set routing-instances CE-193 instance-type virtual-router
+set routing-instances CE-193 interface lo0.193
+set routing-instances CE-193 interface ge-0/0/3.193
+set routing-instances CE-193 routing-options autonomous-system 10193 independent-domain
+set routing-instances CE-193 routing-options static route 100.64.193.0/24 discard
+set routing-instances CE-193 routing-options rib CE-193.inet6.0 static route 2001:164:193::/48 discard
+set routing-instances CE-193 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.110 family inet
+set routing-instances CE-193 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::16e family inet6
+set routing-instances CE-193 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.194 vlan-id 194 family inet address 172.20.4.113/31
+set interfaces ge-0/0/3.194 vlan-id 194 family inet6 address 2001:200:20:3::171/127
+set interfaces lo0.194 family inet address 100.64.194.1/32
+set interfaces lo0.194 family inet6 address 2001:164:194::1/128
+set routing-instances CE-194 instance-type virtual-router
+set routing-instances CE-194 interface lo0.194
+set routing-instances CE-194 interface ge-0/0/3.194
+set routing-instances CE-194 routing-options autonomous-system 10194 independent-domain
+set routing-instances CE-194 routing-options static route 100.64.194.0/24 discard
+set routing-instances CE-194 routing-options rib CE-194.inet6.0 static route 2001:164:194::/48 discard
+set routing-instances CE-194 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.112 family inet
+set routing-instances CE-194 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::170 family inet6
+set routing-instances CE-194 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.195 vlan-id 195 family inet address 172.20.4.115/31
+set interfaces ge-0/0/3.195 vlan-id 195 family inet6 address 2001:200:20:3::173/127
+set interfaces lo0.195 family inet address 100.64.195.1/32
+set interfaces lo0.195 family inet6 address 2001:164:195::1/128
+set routing-instances CE-195 instance-type virtual-router
+set routing-instances CE-195 interface lo0.195
+set routing-instances CE-195 interface ge-0/0/3.195
+set routing-instances CE-195 routing-options autonomous-system 10195 independent-domain
+set routing-instances CE-195 routing-options static route 100.64.195.0/24 discard
+set routing-instances CE-195 routing-options rib CE-195.inet6.0 static route 2001:164:195::/48 discard
+set routing-instances CE-195 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.114 family inet
+set routing-instances CE-195 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::172 family inet6
+set routing-instances CE-195 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.196 vlan-id 196 family inet address 172.20.4.117/31
+set interfaces ge-0/0/3.196 vlan-id 196 family inet6 address 2001:200:20:3::175/127
+set interfaces lo0.196 family inet address 100.64.196.1/32
+set interfaces lo0.196 family inet6 address 2001:164:196::1/128
+set routing-instances CE-196 instance-type virtual-router
+set routing-instances CE-196 interface lo0.196
+set routing-instances CE-196 interface ge-0/0/3.196
+set routing-instances CE-196 routing-options autonomous-system 10196 independent-domain
+set routing-instances CE-196 routing-options static route 100.64.196.0/24 discard
+set routing-instances CE-196 routing-options rib CE-196.inet6.0 static route 2001:164:196::/48 discard
+set routing-instances CE-196 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.116 family inet
+set routing-instances CE-196 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::174 family inet6
+set routing-instances CE-196 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.197 vlan-id 197 family inet address 172.20.4.119/31
+set interfaces ge-0/0/3.197 vlan-id 197 family inet6 address 2001:200:20:3::177/127
+set interfaces lo0.197 family inet address 100.64.197.1/32
+set interfaces lo0.197 family inet6 address 2001:164:197::1/128
+set routing-instances CE-197 instance-type virtual-router
+set routing-instances CE-197 interface lo0.197
+set routing-instances CE-197 interface ge-0/0/3.197
+set routing-instances CE-197 routing-options autonomous-system 10197 independent-domain
+set routing-instances CE-197 routing-options static route 100.64.197.0/24 discard
+set routing-instances CE-197 routing-options rib CE-197.inet6.0 static route 2001:164:197::/48 discard
+set routing-instances CE-197 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.118 family inet
+set routing-instances CE-197 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::176 family inet6
+set routing-instances CE-197 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.198 vlan-id 198 family inet address 172.20.4.121/31
+set interfaces ge-0/0/3.198 vlan-id 198 family inet6 address 2001:200:20:3::179/127
+set interfaces lo0.198 family inet address 100.64.198.1/32
+set interfaces lo0.198 family inet6 address 2001:164:198::1/128
+set routing-instances CE-198 instance-type virtual-router
+set routing-instances CE-198 interface lo0.198
+set routing-instances CE-198 interface ge-0/0/3.198
+set routing-instances CE-198 routing-options autonomous-system 10198 independent-domain
+set routing-instances CE-198 routing-options static route 100.64.198.0/24 discard
+set routing-instances CE-198 routing-options rib CE-198.inet6.0 static route 2001:164:198::/48 discard
+set routing-instances CE-198 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.120 family inet
+set routing-instances CE-198 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::178 family inet6
+set routing-instances CE-198 protocols bgp group ebgp export PS-EBGP-EXPORT
+
+
+set interfaces ge-0/0/3.199 vlan-id 199 family inet address 172.20.4.123/31
+set interfaces ge-0/0/3.199 vlan-id 199 family inet6 address 2001:200:20:3::17b/127
+set interfaces lo0.199 family inet address 100.64.199.1/32
+set interfaces lo0.199 family inet6 address 2001:164:199::1/128
+set routing-instances CE-199 instance-type virtual-router
+set routing-instances CE-199 interface lo0.199
+set routing-instances CE-199 interface ge-0/0/3.199
+set routing-instances CE-199 routing-options autonomous-system 10199 independent-domain
+set routing-instances CE-199 routing-options static route 100.64.199.0/24 discard
+set routing-instances CE-199 routing-options rib CE-199.inet6.0 static route 2001:164:199::/48 discard
+set routing-instances CE-199 protocols bgp group ebgp type external peer-as 111 neighbor 172.20.4.122 family inet
+set routing-instances CE-199 protocols bgp group ebgp type external peer-as 111 neighbor 2001:200:20:3::17a family inet6
+set routing-instances CE-199 protocols bgp group ebgp export PS-EBGP-EXPORT
+
