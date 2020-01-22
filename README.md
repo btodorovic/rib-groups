@@ -26,7 +26,9 @@ fashion, intended to store routing information belonging to different routing co
 with the technical requirement to implement MPLS L3 VPNs and similar applications back in 1998 when MPLS technology
 was born. Therefore, Juniper Networks devices can maintain a myriad of independent routing tables, both on the
 Routing Engine (RE) and on the Packet Forwarding Engine (PFE). We refer the former as Routing Information Base (RIB),
-while the latter is somtimes referred to as Forwarding Information Base (FIB)
+while the latter is somtimes referred to as Forwarding Information Base (FIB). The full story about routing tables in
+the Junos OS you can find on the
+[Understanding Junos OS Routing Tables](https://www.juniper.net/documentation/en_US/junos/topics/concept/routing-tables-understanding.html) documentation page.
 
 When a "virgin" router is booted it comes only with one single RIB created on the RE - the default **inet.0**,
 used to carry IPv4 unicast prefixes. In the PFE the router has a pre-ccreated "FIB" **default.inet**. When
@@ -37,7 +39,9 @@ store MPLS LSP endpoints, used by various MPLS services to retrieve the next-hop
 if IPv6 is used, **inet6.0** RIB appears in there as well. If IS-IS is used as IGP **iso.0** RIB will appear to
 carry CLNS routing information. If MPLS IPv4 VPNs are used **bgp.l3vpn.0** RIB will be there to store BGP-learnt
 VPNv4 routes. If MPLS IPv6 VPNs are used **bgp.l3vpn-inet6.0** RIB will be there to store BGP-learnt VPNv6 routes.
-A part of this is shown in the picture below:
+The rest of the story you can find [here](https://www.juniper.net/documentation/en_US/junos/topics/concept/routing-tables-understanding.html).
+
+A simplified part of the story above is shown in the picture below:
 <pre>
                                                       
         MASTER/DEFAULT ROUTING INSTANCE            NON-DEFAULT ROUTING INSTANCES (VRF, VR etc.)
@@ -55,10 +59,10 @@ A part of this is shown in the picture below:
  +----------+   +------------+   +------------+   !  |  A.inet.0  |    !  !  |  B.inet.0  |    !
  |  mpls.0  |   |   inet.0   |   |  inet6.0   |   !  +------------+    !  !  +------------+    !
  +----------+   +------------+   +------------+   +--------------------+  +--------------------+ CONTROL
-                                                                                                 PLANE
+                                                                                                 PLANE (RE)
 ============================================================================================================
  +----------+ +---------------+ +---------------+   +-------------+          +-------------+     FORWARDING
- |  mpls.0  | | default.inet  | | default.inet6 |   |   A.inet6   |          |   B.inet6   |     PLANE
+ |  mpls.0  | | default.inet  | | default.inet6 |   |   A.inet6   |          |   B.inet6   |     PLANE (PFE)
  +----------+ +---------------+ +---------------+   +-------------+          +-------------+
                                                     +-------------+          +-------------+
                                                     |   A.inet    |          |   B.inet    |
