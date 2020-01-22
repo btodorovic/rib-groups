@@ -1,4 +1,7 @@
 #!/usr/bin/python
+#
+# Script to generate "CE" (r2) rib-group/routing-instance configuration
+#
 
 from string import Template
 from netaddr import IPAddress, IPNetwork

@@ -19,6 +19,8 @@
 * [r2 configuration](r2.full.conf)
 * [Sample CLI outputs](sample-outputs.txt)
 * [VMM/Junosphere configuration file](vm.conf)
+* [gen-pe.cy](gen-pe.cy) - script to generate **r1** configuration
+* [gen-ce.cy](gen-ce.cy) - script to generate **r2** configuration
 
 ## Theory - RIBs, Routing Instances, Logical Systems
 
