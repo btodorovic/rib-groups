@@ -113,25 +113,29 @@ using RIB Groups. They can only exchange routing information by connecting two L
 
 Simple exercise showing the power of rib-groups and their replications:
 * We created two sets of RIB Groups.
-* The first RG set consists of 2 RGs, used to copy prefixes from default RI into VRxxx RIs:
-    - **RG-INET0-TO-VRs** - copies **inet.0** prefixes into **VRxxx.inet.0** (IPv4)
-    - **RG-INET6-TO-VRs** - copies **inet6.0** prefixes into **VRxxx.inet6.0** (IPv6)
+* The first RG set consists of 2 RGs, used to copy prefixes from default RI into ALL 189 VRxxx (VR10-VR199) RIs:
+    - **RG-INET0-TO-VRs** - copies **inet.0** prefixes into all **VRxxx.inet.0** (IPv4)
+    - **RG-INET6-TO-VRs** - copies **inet6.0** prefixes into all **VRxxx.inet6.0** (IPv6)
     - Both use import-policy **PS-INET0-TO-VRs** to copy only one loopback address (100.100.$vrid$.1/32), defined on lo0.0
     - The "to" clause in the policy terms is used to ensure prefix import into the right routing instance.
 * The second RG set conists of 200 RGs, used to copy prefixes form VRxxx RIs into the default RI:
     - **RG-VRxxx-TO-INET0** - copies **VRxxx.inet.0** prefixes into **inet.0** (IPv4)
-    - **RG-VRxxx-TO-INET0** - copies **VRxxx.inet6.0** prefixes into **inet6.0** (IPv6)
+    - **RG-VRxxx-TO-INET6** - copies **VRxxx.inet6.0** prefixes into **inet6.0** (IPv6)
     - All use import-policy **PS-VR100-TO-INET0** copying only direct and BGP routes
 
 Simplified, the syntax looks like this:
 <pre>
 routing-options {
    rib-groups {
-        RG-INET0-TO-VRs {
+        RG-INET0-TO-VRs { # Copy inet.0 into VR10.inet.0, VR11.inet.0 ... VR199.inet.0
             import-rib [ inet.0 VR10.inet.0 VR11.inet.0 ... VR199.inet.0 ];
             import-policy PS-INET0-TO-VRs;
         }
-        RG-VR10-TO-INET0 {
+        RG-INET6-TO-VRs { # Copy inet6.0 into VR10.inet6.0, VR11.inet6.0 ... VR199.inet6.0
+            import-rib [ inet6.0 VR10.inet6.0 VR11.inet6.0 ... VR199.inet6.0 ];
+            import-policy PS-INET0-TO-VRs;
+        }
+        RG-VR10-TO-INET0 { 
             import-rib [ VR10.inet.0 inet.0 ];
             import-policy PS-VR10-TO-INET0;
         }
@@ -165,6 +169,7 @@ policy-options {
         term VR10-INET6 {
             from {
                 family inet6;
+                protocol direct;
                 route-filter 2001:1100:10::1/128 exact;
             }
             to rib VR10.inet6.0;
@@ -182,6 +187,7 @@ policy-options {
         term VR11-INET6 {
             from {
                 family inet6;
+                protocol direct;
                 route-filter 2001:1100:11::1/128 exact;
             }
             to rib VR11.inet6.0;
