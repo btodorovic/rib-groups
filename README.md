@@ -15,9 +15,9 @@
 
 ### Router Configurations and Sample Outputs
 
-* [r1.full.conf](r1 - full configuration)
-* [r2.full.conf](r2 - full configuration)
-* [sample-outputs.txt](Sample CLI outputs)
+* [r1 configuration](r1.full.conf)
+* [r2 configuration](r2.full.conf)
+* [Sample CLI outputs](sample-outputs.txt)
 
 
 ## JUNOS RIBs
