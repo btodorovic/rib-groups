@@ -18,6 +18,7 @@
 * [r1 configuration](r1.full.conf)
 * [r2 configuration](r2.full.conf)
 * [Sample CLI outputs](sample-outputs.txt)
+* [VMM/Junosphere configuration file](vm.conf)
 
 ## Theory - RIBs, Routing Instances, Logical Systems
 
