@@ -1,0 +1,88 @@
+root@r1> show route table VR21.inet.0 
+
+VR21.inet.0: 6 destinations, 6 routes (6 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+100.64.21.0/24     *[BGP/170] 01:19:16, localpref 100
+                      AS path: 1021 I, validation-state: unverified
+                    > to 172.20.3.23 via ge-0/0/3.21
+100.100.21.1/32    *[Direct/0] 01:18:16
+                    > via lo0.0
+100.111.21.0/24    *[Static/5] 01:27:34
+                      Discard
+100.111.21.1/32    *[Direct/0] 01:27:33
+                    > via lo0.21
+172.20.3.22/31     *[Direct/0] 01:27:33
+                    > via ge-0/0/3.21
+172.20.3.22/32     *[Local/0] 01:27:33
+                      Local via ge-0/0/3.21
+
+root@r1> show route table VR31.inet.0 
+
+VR31.inet.0: 6 destinations, 6 routes (6 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+100.64.31.0/24     *[BGP/170] 01:19:38, localpref 100
+                      AS path: 1031 I, validation-state: unverified
+                    > to 172.20.3.43 via ge-0/0/3.31
+100.100.31.1/32    *[Direct/0] 01:18:25
+                    > via lo0.0
+100.111.31.0/24    *[Static/5] 01:27:43
+                      Discard
+100.111.31.1/32    *[Direct/0] 01:27:42
+                    > via lo0.31
+172.20.3.42/31     *[Direct/0] 01:27:42
+                    > via ge-0/0/3.31
+172.20.3.42/32     *[Local/0] 01:27:42
+                      Local via ge-0/0/3.31
+
+root@r1> show route 100.100.21.1/32 
+
+inet.0: 584 destinations, 584 routes (584 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+100.100.21.1/32    *[Direct/0] 01:21:06
+                    > via lo0.0
+
+VR21.inet.0: 6 destinations, 6 routes (6 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+100.100.21.1/32    *[Direct/0] 01:18:51
+                    > via lo0.0
+
+root@r1> show route 100.100.21.1/32 detail
+
+inet.0: 584 destinations, 584 routes (584 active, 0 holddown, 0 hidden)
+100.100.21.1/32 (1 entry, 0 announced)
+        *Direct Preference: 0
+                Next hop type: Interface, Next hop index: 0
+                Address: 0xb6335b0
+                Next-hop reference count: 2
+                Next hop: via lo0.0, selected
+                State: <Active Int>
+                Local AS:   111 
+                Age: 1:21:08 
+                Validation State: unverified 
+                Task: IF
+                AS path: I 
+                Secondary Tables: VR21.inet.0
+
+VR21.inet.0: 6 destinations, 6 routes (6 active, 0 holddown, 0 hidden)
+
+100.100.21.1/32 (1 entry, 1 announced)
+        *Direct Preference: 0
+                Next hop type: Interface, Next hop index: 0
+                Address: 0xb6335b0
+                Next-hop reference count: 2
+                Next hop: via lo0.0, selected
+                State: <Secondary Active Int>
+                Local AS:   111 
+                Age: 1:18:53 
+                Validation State: unverified 
+                Task: IF
+                Announcement bits (1): 1-KRT 
+                AS path: I 
+                Primary Routing Table inet.0
+
+root@r1> quit 
+
