@@ -231,23 +231,23 @@ the routing protocol context where the routes are imported from. Remember that r
 operations in the Junos OS are "RIB-centric" - i.e. they are defined with the RIB being the reference point. In other
 words, prefixes are always:
 
-* **IMPORTED FROM** an external source (e.g. routing protocol) or another RIB **INTO** the current RIB, or:
-* **EXPORTED INTO** an external source (e.g. routing protocol) or another RIB **INTO** the current RIB.
+* **IMPORTED INTO** the current RIB **FROM** an external source (e.g. routing protocol) or another RIB.
+* **EXPORTED FROM** the current RIB **INTO** an external source (e.g. routing protocol) or another RIB.
 
-In this sense, we always apply the RIB group at the appropriate routing protocol context where we need to import
-the prefixes from the routing protocol process into the RIB Group:
+In this sense, we always apply the RIB group at the appropriate routing protocol context where we need to export
+the prefixes from the current RIB into routing protocol process:
 
-* If the RG imports routes from the Default RI (**inet.0** RIB), it MUST be applied at the Default RI routing protocol level - e.g.:
+* If the RG exports routes from the Default RI (**inet.0** RIB), it MUST be applied at the Default RI routing protocol level - e.g.:
   - Direct routes: [edit routing-options interface-groups rib-group]
   - Static routes: [edit routing-options static rib-group]
   - ISIS/OSPF: [edit protocols isis/ospf rib-group]
-  - BGP: [edit protocols bgp group GROUP family AFI rib-group]
+  - BGP: [edit protocols bgp family AFI rib-group] (can also be done per-group or per-neighbor level)
 
-* If the RG imports routes from a non-default RI (**RI.inet.0** RIB), it MUST be applied at the appropriate RI routing protocol level.
+* If the RG exports routes from a non-default RI (**RI.inet.0** RIB), it MUST be applied at the appropriate RI routing protocol level.
   - Direct routes: [edit routing-instances RI routing-options interface-groups rib-group]
   - Static routes: [edit routing-instances RI routing-options static rib-group]
   - ISIS/OSPF: [edit routing-instances RI protocols isis/ospf rib-group]
-  - BGP: [edit routing-instances RI protocols bgp group GROUP family AFI rib-group]
+  - BGP: [edit routing-instances RI protocols bgp family AFI rib-group] (can also be done per-group or per-neighbor level)
 
 In other words:
 
