@@ -125,7 +125,7 @@ A RIB group is defined by using the **import-rib** statement under the **\[edit 
 routing-option {
     rib-groups {
         <rib-group name> {
-            import-rib [ source-rib destination-rib-1 destination-rib2 ... ]
+            import-rib [ source-rib destination-rib-1 destination-rib-2 ... ]
             import-policy policy-name;
         }
     }
