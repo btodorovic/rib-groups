@@ -1,6 +1,9 @@
 
 # VMM TOPOLOGY ILLUSTRATING 'rib-groups' FEATURE
 
+See also Juniper Networks Knowledge Base Article [KB16133](https://kb.juniper.net/InfoCenter/index?page=content&id=KB16133),
+also authored by me.
+
 ## TOPOLOGY
 
 <pre>
@@ -111,7 +114,84 @@ using RIB Groups. They can only exchange routing information by connecting two L
 
 ## RIB Group Definitions
 
-Simple exercise showing the power of rib-groups and their replications:
+A RIB group is a template-like configuration, providing a way for a routing protocol to install routing
+information (routes, prefixes) into multiple Routing Tables that are defined in the Junos OS.
+A RIB group should be understood precisely as a "template". For a RIB group to take effect, it must first
+be both **defined** and **applied** within a specified routing protocol context.
+
+A RIB group is defined by using the **import-rib** statement under the **\[edit routing-options rib-groups\]** configuration hierarchy:
+
+<pre>
+routing-option {
+    rib-groups {
+        <rib-group name> {
+            import-rib [ source-rib destination-rib-1 destination-rib2 ... ]
+            import-policy policy-name;
+        }
+    }
+}
+</pre>
+
+Each RIB group specifies the source RIB where the routing information comes from and the list of all target RIBs
+where the routing information should be **IMPORTED INTO** (hence the **import-rib** knob). Remember that routing
+information import / export operations in the Junos OS are "RIB-centric" - i.e. they are defined with the RIB being
+the reference point. In other words, prefixes are always:
+
+* **IMPORTED INTO** the current RIB **FROM** an external source (e.g. routing protocol) or another RIB.
+* **EXPORTED FROM** the current RIB **INTO** an external source (e.g. routing protocol) or another RIB.
+
+This is shown in the diagram below:
+
+<pre>
+                                .-----------.   
+                                |           |
+        IMPORT INTO inet.0      |           |    EXPORT FROM inet.0
+RIP --------------------------&gt;&gt;|           +-----------------------&gt;&gt; OSPF
+            from RIP            |   R I B   |        into OSPF
+                                |           |
+        IMPORT INTO inet.0      |   inet.0  |    EXPORT FROM inet.0
+BGP --------------------------&gt;&gt;|           +-----------------------&gt;&gt; BGP
+            from BGP            |           |        into BGP
+                                |           |
+                                `-----------'
+</pre>
+
+
+So, in the statement above the **DESTINATION RIBs** are in the center, while the **SOURCE RIB** is
+the source of the routing information, from which it is **IMPORTED INTO** DESTINATION RIBs.
+
+An example of a RIB group that is used to copy the content of the default IPv4 unicast routing table inet.0 into the RIB test.inet.0
+(IPv4 unicast routing table defined within the routing-instance test) is provided below:
+
+<pre>
+routing-options      {
+    rib-groups  {
+        RG-DEFAULT-TO-TEST { # RG name, suggesting copying of routes from the default routing-instance to routing-instance test
+            import-rib [ inet.0 test.inet.0 ];
+            import-policy PL-RG-DEFAULT-TO-TEST;    # Optional route filtering policy
+        }
+    }
+}
+
+policy-options {
+    policy-statement PL-RG-DEFAULT-TO-TEST {
+        term interfaces {
+            from {
+                protocol direct;
+                route-filter 198.18.1.0/24 orlonger;
+            }
+            to rib test.inet.0;
+            then accept;
+        }
+        then reject;
+    }
+}
+</pre>
+
+An optional policy controls which routes are being copied. If omitted, all routes from the source RIB are copied into all destination RIBs. 
+Having a policy is useful, especially if one source RIB is copied into multiple destination RIBs, in which case prefixes being copied may be controlled by using the "to" control within the policy statement. 
+This, more complex use case is shown in the example below, used within this exercise:
+
 * We created two sets of RIB Groups.
 * The first RG set consists of 2 RGs, used to copy prefixes from default RI into ALL 189 VRxxx (VR10-VR199) RIs:
     - **RG-INET0-TO-VRs** - copies **inet.0** prefixes into all **VRxxx.inet.0** (IPv4)
@@ -220,14 +300,10 @@ See the full router configurations for more details:
 * [r1 configuration](r1.full.conf)
 * [r2 configuration](r2.full.conf)
 
-Once the RIB Groups are defined they do nothing. They serve simply as "templates" signaling the router our intention
-to copy prefixes from one RIB into the other. However, in order for them to take this action, they must be applied
-within the proper routing protocol configuration context.
-
 ## RIB Group Applications
 
 RGs are applied under the appropriate routing protocol configurations. The place where they are applied depends on
-the routing protocol context where the routes are imported from. Remember that routing information import / export
+the routing protocol context where the routes are imported from.  Remember that routing information import / export
 operations in the Junos OS are "RIB-centric" - i.e. they are defined with the RIB being the reference point. In other
 words, prefixes are always:
 
