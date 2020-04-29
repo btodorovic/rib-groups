@@ -153,7 +153,13 @@ RIP --------------------------&gt;&gt;|           +-----------------------&gt;&g
 BGP --------------------------&gt;&gt;|           +-----------------------&gt;&gt; BGP
             from BGP            |           |        into BGP
                                 |           |
-                                `-----------'
+                                |           |    EXPORT FROM inet.0 ! IMPORT INTO X.inet.0  .------------.
+                                |           |      into X.inet.0    !     from inet.0       |            |
+                                |           +---------------------&gt;&gt;!---------------------&gt;&gt;|    RIB     | 
+                                |           |                       !                       |            |
+                                |           |&lt;&lt;---------------------!&lt;&lt;---------------------+  X.inet.0  |
+                                |           |    IMPORT INTO inet.0 ! EXPORT FROM X.inet.0  |            |
+                                `-----------'      from X.inet.0    !     into inet.0       `------------'
 </pre>
 
 
